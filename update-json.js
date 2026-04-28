@@ -222,19 +222,19 @@
 
   // 下500件を置き換え
   const updated_e = [
-    ...eriadata,
+    ...eriadata.slice(0,-500),
     ...eria
   ];
   const updated_y = [
-    ...yaguradata,
+    ...yaguradata.slice(0,-500),
     ...yagura
   ];
   const updated_h = [
-    ...hokodata,
+    ...hokodata.slice(0,-500),
     ...hoko
   ];
   const updated_a = [
-    ...asaridata,
+    ...asaridata.slice(0,-500),
     ...asari
   ];
 
