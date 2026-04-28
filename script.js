@@ -414,7 +414,7 @@ function lineChart() {
   container.style.height = "";
   container2.style.height = 0;
   const labels = ["2022冬", "2023春", "2023夏", "2023秋", "2023冬", "2024春", "2024夏", 
-    "2024秋", "2024冬", "2025春", "2025夏", "2025秋", "2025冬"]
+    "2024秋", "2024冬", "2025春", "2025夏", "2025秋", "2025冬", "2026春"]
   const ctx = document.getElementById('mainChart2');
   const rows = document.querySelectorAll("#analysisTable tbody tr");
   const data = Array.from(rows)
@@ -1186,7 +1186,7 @@ async function display() {
 
     let prevTotal = 0;
 
-    for (let season = 2; season <= 14; season++) {
+    for (let season = 2; season <= (CurrentSeason-1); season++) {
 
       const eriaCount   = countBySeason(eriadata, season, choices);
       const yaguraCount = countBySeason(yaguradata, season, choices);
