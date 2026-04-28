@@ -60,7 +60,8 @@ function getSeason(num) {
     11: "2025春",
     12: "2025夏",
     13: "2025秋",
-    14: "2025冬"
+    14: "2025冬",
+    15: "2026春"
   };
 
   return seasons[num] || "不明";
@@ -1186,7 +1187,7 @@ async function display() {
 
     let prevTotal = 0;
 
-    for (let season = 2; season <= (CurrentSeason-1); season++) {
+    for (let season = 2; season <= CurrentSeason; season++) {
 
       const eriaCount   = countBySeason(eriadata, season, choices);
       const yaguraCount = countBySeason(yaguradata, season, choices);
