@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    padding: 20px;
+}
+p {
+    margin: 0 auto 5px;
+    max-width: 800px;
+}
+.note {
+  color: #666;        /* 少し薄いグレー */
+  font-size: 0.9em;   /* 少し小さめ */
+}
+header { 
+    background: #333;
+    padding: 10px;
+}
+
+header button {
+    color: white;
+    background: #555;          /* 背景つける */
+    border: 1px solid #777;   /* 枠つける */
+    padding: 8px 16px;        /* サイズ感 */
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;       /* 角丸 */
+}
+
+/* ホバー時 */
+header button:hover {
+    background: #777;
+}
+
+/* 今選択されてるボタン */
+header button.active-btn {
+    background: #00aaff;
+    border-color: #0088cc;
+}
+
+.page {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+.filter-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+input#ranking_filter {
+    width: 70px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+#suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  max-height: 150px;
+  overflow-y: auto;
+  background: white;
+}
+
+#suggestions li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+#suggestions li:hover {
+  background: #eee;
+}
+
+#suggestions_all {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  max-height: 150px;
+  overflow-y: auto;
+  background: white;
+}
+
+#suggestions_all li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+#suggestions_all li:hover {
+  background: #eee;
+}
+
+.filter-button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.filter-button:hover {
+    background: #45a049;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.checkbox-row input[type="text"] {
+  flex: 1;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+.table-container {
+  max-height: 1000px;   /* 表の高さ制限 */
+  overflow-y: auto;    /* 縦スクロール */
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th.center {
+    text-align: center;
+}
+td.center {
+    text-align: center;
+}
+
+th.rk {
+    text-align: center;
+    font-size: 14px;
+}
+th.wm {
+    text-align: center;
+    font-size: 11px;
+}
+
+th {
+    background: #f4f4f4;
+}
+
+tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.weapon-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.rule-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.graphs {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px auto 0;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#chart-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* 基本ボタン */
+#chart-controls button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 999px; /* 丸い */
+    background: #eee;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* ホバー */
+#chart-controls button:hover {
+    background: #ddd;
+    transform: translateY(-2px);
+}
+
+/* 押してる状態 */
+#chart-controls button.active {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* 押した瞬間 */
+#chart-controls button:active {
+    transform: scale(0.95);
+}
+
+#chart-container {
+  display: flex;
+  justify-content: center; /* 横中央 */
+  align-items: center;     /* 縦中央 */
+}
+
+#chart-container2 {
+  display: flex;
+  justify-content: center; /* 横中央 */
+  align-items: center;     /* 縦中央 */
+}
+
+#chart-container3 {
+  display: flex;
+  justify-content: center; /* 横中央 */
+  align-items: center;     /* 縦中央 */
+}
+
+.selected {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 6px 12px;
+  background: #f5f7fa;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: #e6f0ff;
+  border-radius: 999px;
+  color: #0078ff;
+  font-weight: bold;
+}
+
+.tag button {
+  border: none;
+  background: transparent;
+  color: #0078ff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 50px);
+  gap: 10px;
+
+  background-color: #eeeeee;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgb(213, 223, 234);
+  border-radius: 6px;
+
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background-color: rgb(200, 215, 230);
+}
+
+.icon:active {
+  transform: translateY(1px);
+  box-shadow: 0 0.5px 1.5px rgba(0,0,0,0.2);
+  background-color: rgb(180, 200, 220);
+}
+
+.tag-btn {
+padding: 6px 12px;
+border-radius: 20px;
+cursor: pointer;
+border: none;
+color: #333;
+}
+
+.tag1 { background-color: #FADADC; }
+.tag2 { background-color: #DDF0DE; }
+.tag3 { background-color: #DCE6ED; }
+.tag4 { background-color: #FDEDE1; }
+.tag5 { background-color: #CFF1F8; }
+.tag6 { background-color: #D7EDEA; }
+.tag7 { background-color: #FFE3F1; }
+.tag8 { background-color: #FBF4E3; }
+.tag9 { background-color: #EAE4E2; }
+.tag10 { background-color: #EDDEF9; }
+.tag11 { background-color: #D4D9DF; }
+.tag12 { background-color: #F8DDD6; }
+.tag13 { background-color: #D7F2DA; }
+.tag14 { background-color: #D7E7F2; }
+.tag15 { background-color: #D7F2F1; }
+.tag16 { background-color: #D7D8F2; }
+
+.tag-btn:hover {
+  filter: brightness(0.95);
+}
+
+.tag-btn:active {
+  filter: brightness(1.05);
+}
+
+
+#weapon-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* 基本ボタン */
+#weapon-controls button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 999px; /* 丸い */
+    background: #eee;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* ホバー */
+#weapon-controls button:hover {
+    background: #ddd;
+    transform: translateY(-2px);
+}
+
+/* 押してる状態 */
+#weapon-controls button.active {
+    background: linear-gradient(135deg, #ff8000, #ff0000);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* 押した瞬間 */
+#weapon-controls button:active {
+    transform: scale(0.95);
+}
