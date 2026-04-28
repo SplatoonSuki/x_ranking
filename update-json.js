@@ -1,13 +1,11 @@
 (async () => {
   const fs = require("fs");
-
-  const [eriadata, yaguradata, hokodata, asaridata,
-    eria_new, yagura_new, hoko_new, asari_new
+  const eriadata = JSON.parse(fs.readFileSync("data/eria.json", "utf-8"));
+  const yaguradata = JSON.parse(fs.readFileSync("data/yagura.json", "utf-8"));
+  const hokodata = JSON.parse(fs.readFileSync("data/hoko.json", "utf-8"));
+  const asaridata = JSON.parse(fs.readFileSync("data/asari.json", "utf-8"));
+  const [eria_new, yagura_new, hoko_new, asari_new
   ] = await Promise.all([
-    fetch("data/eria.json").then(res => res.json()),
-    fetch("data/yagura.json").then(res => res.json()),
-    fetch("data/hoko.json").then(res => res.json()),
-    fetch("data/asari.json").then(res => res.json()),
     fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-15.splatzones.json').then(res => res.json()),
     fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-15.towercontrol.json').then(res => res.json()),
     fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-15.rainmaker.json').then(res => res.json()),
