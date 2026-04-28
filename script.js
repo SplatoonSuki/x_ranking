@@ -800,7 +800,7 @@ async function applyFilter_() {
     let d = s - ps;
     if (!not_percent) {
       let adjustment = r_f / 100
-      if (season=="all") adjustment=adjustment*(CurrentSeason-2)
+      if (season=="all") adjustment=adjustment*(CurrentSeason-1)
       e = Number((e/adjustment).toFixed(2))
       y = Number((y/adjustment).toFixed(2))
       h = Number((h/adjustment).toFixed(2))
@@ -1331,7 +1331,7 @@ async function display() {
       let d = s - ps;
       if (!not_percent) {
         let adjustment = 5;
-        if (season == "all") adjustment = adjustment * (CurrentSeason-2)
+        if (season == "all") adjustment = adjustment * (CurrentSeason-1)
         e = Number((e/adjustment).toFixed(2))
         y = Number((y/adjustment).toFixed(2))
         h = Number((h/adjustment).toFixed(2))
