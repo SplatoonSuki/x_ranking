@@ -2,7 +2,7 @@ name: update-json-daily
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 毎日UTC 0:00（日本だと9:00）
+    - cron: '30 10 * * *' # 毎日UTC 0:00（日本だと9:00）
   workflow_dispatch: # 手動実行もできる
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
           node-version: '18'
 
       - name: JS実行
-        run: node script.js
+        run: node update-json.js
 
       - name: 変更をコミット＆プッシュ
         run: |
