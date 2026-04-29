@@ -202,10 +202,12 @@ tr:nth-child(even) {
 }
 
 .weapon-icon {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     margin-right: 8px;
     vertical-align: middle;
+    transform: scale(1.5);
+    transform-origin: center;
 }
 
 .rule-icon {
