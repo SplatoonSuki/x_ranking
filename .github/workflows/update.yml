@@ -2,7 +2,7 @@ name: update-json-daily
 
 on:
   schedule:
-    - cron: '0 15 * * *'  # 毎日15:00 UTCに実行
+    - cron: '0 10 * * *'  # 毎日10:00 UTCに実行
   workflow_dispatch:       # 手動実行も可能
 
 permissions:
