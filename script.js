@@ -1124,7 +1124,8 @@ rows.forEach(row => {
   if (!iconUrl) return;
   img.alt = name;
   img.src = iconUrl;
-  img.classList.add("weapon-icon");
+  if (weapon == "sub" || weapon == "special") img.classList.add("weapon-icon_");
+  else img.classList.add("weapon-icon");
 
   // テキストの前に追加
   cell.prepend(img);  
