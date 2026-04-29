@@ -719,7 +719,10 @@ function applyFilter() {
         <td class="center">${index + 1}</td>
         <td class="center">${item.power}</td>
         <td >${item.name}</td>
-        <td>${item.weapon}</td>
+        <td>
+          <img src="assets/${normalizeUrl(item.weapon)}.png" class="weapon-icon" alt = ${item.weapon}>
+          ${item.weapon}
+        </td>
         <td class="center">${getSeason(item.season)}</td>
       `;
 
