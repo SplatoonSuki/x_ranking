@@ -635,9 +635,7 @@ function createList(w) {
         img.addEventListener("click", () => {
           let n = trueName(fileName.slice(0, -4),true)
           if (n == "R-PEN/5H") n = "R-PEN";
-          findByBaseName(n,mainMap).forEach(item => {
-            addTag(item);
-          });
+          addTag(n)
         });
       } else if (w == "set") {
         if (i <= 35) {
@@ -1154,13 +1152,21 @@ async function display() {
   const table = document.getElementById("analysisTable")
   table.innerHTML = ""
 
-  if (type=="sub" || type=="special"  || type=="category"  || type=="range" ) {
-    let map;
-    if (type == "sub") map = subMap
-    else if (type == "special") map = specialMap
-    else if (type == "category") map = categoryMap
-    else map = rangeMap
-    choices = findByBaseName(choices[0],map);
+  if (type!="set") {
+    if (type == "main") {
+      let l = []
+      choices.forEach(n => {
+        l = l.concat(findByBaseName(n,mainMap))
+      });
+      choices = l;
+    } else {
+      let map;
+      if (type == "sub") map = subMap
+      else if (type == "special") map = specialMap
+      else if (type == "category") map = categoryMap
+      else map = rangeMap
+      choices = findByBaseName(choices[0],map);
+    }
   }
 
   if (season=="seasonal") {
@@ -1502,8 +1508,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-const input_ = document.getElementById("search");
-const suggestions_ = document.getElementById("suggestions_all");
 const selectedSet = new Set();
 const choice = document.getElementById("choice");
 
@@ -1540,42 +1544,3 @@ function addTag(n) {
 function findByBaseName(baseName, data) {
   return Object.keys(data).filter(key => !aliasMap[key] && data[key] === baseName);
 }
-
-input_.addEventListener("input", () => {
-  const value = input_.value.trim();
-  suggestions_.innerHTML = "";
-
-  if (value === "") return;
-
-  // 0〜3（=1〜4番目）と、5以降（=6番目〜最後）
-  const wp = [
-    ...weapons.slice(0, 160),
-    ...weapons.slice(173)
-  ].map((w, i) =>
-  (i >= 193 && i <= 257) ? `${w}(メイン)` : w
-  );
-
-  // 部分一致でフィルタ
-  const filtered = wp.filter(w =>
-    w.includes(value)
-  );
-
-  filtered.forEach(w => {
-    const li = document.createElement("li");
-    li.textContent = w;
-
-    li.addEventListener("click", () => {
-      input_.value = w;
-      addTag(input_.value)
-      suggestions_.innerHTML = "";
-    });
-
-    suggestions_.appendChild(li);
-  });
-});
-
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".filter-group")) {
-    suggestions_.innerHTML = "";
-  }
-});
