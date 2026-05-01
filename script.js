@@ -712,7 +712,7 @@ function applyFilter() {
     tbody.innerHTML = "";
     filtered.forEach((item, index) => {
       const row = document.createElement("tr");
-
+      row.classList.add("xranking")
       row.innerHTML = `
         <td class="center">${index + 1}</td>
         <td class="center">${item.power}</td>
