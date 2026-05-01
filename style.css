@@ -191,7 +191,7 @@ th {
     background: #f4f4f4;
 }
 
-tr.xranking:nth-child(even) {
+tr:nth-child(even) {
     background: #fafafa;
 }
 
