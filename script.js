@@ -747,7 +747,7 @@ function applyFilter() {
         const row = document.createElement("tr");
         row.innerHTML = `
           <td class="center">${index + 1}</td>
-          <td class="right">${item.power.toFixed(1)}</td>
+          <td class="center">${item.power.toFixed(1)}</td>
           <td >${item.name}</td>
           <td>
             <img src="assets/${normalizeUrl(item.weapon)}.png" class="weapon-iconmb" alt = ${item.weapon}>
@@ -762,7 +762,7 @@ function applyFilter() {
         const row = document.createElement("tr");
         row.innerHTML = `
           <td class="center">${index + 1}</td>
-          <td class="right">${item.power.toFixed(1)}</td>
+          <td class="center">${item.power.toFixed(1)}</td>
           <td >${item.name}</td>
           <td>
             <img src="assets/${normalizeUrl(item.weapon)}.png" class="weapon-icon" alt = ${item.weapon}>
