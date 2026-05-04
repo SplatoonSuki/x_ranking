@@ -912,7 +912,7 @@ async function applyFilter_() {
 
     result.forEach(item => {
       const group = groupMap[item.weapon] || item.weapon;
-      groupTotals[group] = (groupTotals[group] || 0) + item[sortby];
+      groupTotals[group] = (groupTotals[group] || 0) + Number(item[sortby]);
     });
 
     // ① グループごとにまとめる
@@ -926,7 +926,7 @@ async function applyFilter_() {
 
     // ② グループごとの合計を出す
     const groupedArray = Object.entries(groups).map(([group, items]) => {
-      const total = items.reduce((sum, i) => sum + i[sortby], 0);
+      const total = items.reduce((sum, i) => sum + Number(i[sortby]), 0);
       return { group, items, total };
     });
 
@@ -949,7 +949,7 @@ async function applyFilter_() {
     result.forEach((item, index) => {
       const group = groupMap[item.weapon] || item.weapon;
       const groupTotal = groupTotals[group];
-      const total = item[sortby];
+      const total = Number(item[sortby]);
 
       if (index === 0) {
         currentRank = 1;
