@@ -1,5 +1,18 @@
 const CurrentSeason = 15
 
+const isMobile = (window.innerWidth <= 768) ? true : false;
+
+if (isMobile) {
+  const rcg = document.querySelector("#rankingTable colgroup");
+  rcg.innerHTML = `
+    <col style="width: 10%">
+    <col style="width: 15%">
+    <col style="width: 50%">
+    <col style="width: 10%">
+    <col style="width: 15%">
+  `
+};
+
 function showPage(page) {
   // ページ切り替え
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -236,6 +249,11 @@ function mixColors(color1, color2, ratio = 0.5) {
     .slice(1);
 }
 
+function smartFix(n1,n2) {
+  if (n2 == 1) return n1
+  else if (n2 == 2 || n2 == 5 || n2 == 10) return n1.toFixed(1)
+  else return n1.toFixed(2)
+}
 
 const iconPlugin = {
   id: "iconPlugin",
@@ -321,7 +339,7 @@ function createChart(title) {
 
   if (weapon == "w_cate" || weapon == "w_rang") {
     ctx.removeAttribute("height")
-    container.style.height = "600px";
+    container.style.height = isMobile ? "350px" : "600px";
     const d = getData(rows, mode.index);
     const labels = d.map(e => e[0]);
     const values = d.map(e => e[1]);
@@ -353,6 +371,7 @@ function createChart(title) {
             offset: 2.5
           },
           legend: {
+            display: !isMobile,
             position: 'right'
           }
         }
@@ -363,12 +382,17 @@ function createChart(title) {
     container.style.height = "";
     let data, t;
     if (weapon == "sub" || weapon == "special") {
-      weapon == "sub" ? ctx.height = 200 : ctx.height = 250;
+      if (isMobile) {
+        weapon == "sub" ? ctx.height = 450 : ctx.height = 530;
+      } else {
+        weapon == "sub" ? ctx.height = 200 : ctx.height = 250;
+      };
       data = getData(rows, mode.index);
       t = mode.label + " ランキング"
     }
     else {
       ctx.removeAttribute("height")
+      if (isMobile) ctx.height = 350
       data = getTop10Data(rows, mode.index);
       t =  mode.label + " TOP10"
     }
@@ -409,13 +433,14 @@ function createChart(title) {
 
 let myChart2 = null, myChart3 = null;
 
-function lineChart() {
+function lineChart(b) {
   const container = document.getElementById("chart-container2");
   const container2 = document.getElementById("chart-container3");
   container.style.height = "";
   container2.style.height = 0;
   const labels = ["2022冬", "2023春", "2023夏", "2023秋", "2023冬", "2024春", "2024夏", 
     "2024秋", "2024冬", "2025春", "2025夏", "2025秋", "2025冬", "2026春"]
+  const title = b ? "人数" : "割合"
   const ctx = document.getElementById('mainChart2');
   const rows = document.querySelectorAll("#analysisTable tbody tr");
   const data = Array.from(rows)
@@ -433,7 +458,7 @@ function lineChart() {
     data: {
       labels: labels,
       datasets: [{
-        label: '人数',
+        label: title,
         data: data,
         borderWidth: 2
       }]
@@ -447,8 +472,13 @@ function lineChart() {
 function pieChart() {
   const container = document.getElementById("chart-container2");
   const container2 = document.getElementById("chart-container3");
-  container.style.height = "750px";
-  container2.style.height = "750px";
+  if (isMobile) {
+    container.style.height = "350px";
+    container2.style.height = "350px";
+  } else {
+    container.style.height = "750px";
+    container2.style.height = "750px";
+  }
   const ctx = document.getElementById('mainChart2');
   const ctx2 = document.getElementById('mainChart3');
   const rows = document.querySelectorAll("#analysisTable tbody tr");
@@ -492,6 +522,7 @@ function pieChart() {
           offset: 2.5
         },
         legend: {
+          display: !isMobile,
           position: 'right',
           labels: {
             generateLabels(chart) {
@@ -536,6 +567,7 @@ function pieChart() {
           offset: 2.5
         },
         legend: {
+          display: !isMobile,
           position: 'right'
         },
         title: {
@@ -710,21 +742,38 @@ function applyFilter() {
     filtered.sort((a, b) => b.power - a.power);
     const tbody = document.querySelector("#rankingTable tbody");
     tbody.innerHTML = "";
-    filtered.forEach((item, index) => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td class="center">${index + 1}</td>
-        <td class="center">${item.power}</td>
-        <td >${item.name}</td>
-        <td>
-          <img src="assets/${normalizeUrl(item.weapon)}.png" class="weapon-icon" alt = ${item.weapon}>
-          ${item.weapon}
-        </td>
-        <td class="center">${getSeason(item.season)}</td>
-      `;
+    if (isMobile) {
+      filtered.forEach((item, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td class="center">${index + 1}</td>
+          <td class="right">${item.power.toFixed(1)}</td>
+          <td >${item.name}</td>
+          <td>
+            <img src="assets/${normalizeUrl(item.weapon)}.png" class="weapon-iconmb" alt = ${item.weapon}>
+          </td>
+          <td class="center">${getSeason(item.season)}</td>
+        `;
 
-      tbody.appendChild(row);
-    });
+        tbody.appendChild(row);
+      });
+    } else {
+      filtered.forEach((item, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td class="center">${index + 1}</td>
+          <td class="right">${item.power.toFixed(1)}</td>
+          <td >${item.name}</td>
+          <td>
+            <img src="assets/${normalizeUrl(item.weapon)}.png" class="weapon-icon" alt = ${item.weapon}>
+            ${item.weapon}
+          </td>
+          <td class="center">${getSeason(item.season)}</td>
+        `;
+
+        tbody.appendChild(row);
+      });
+    }
   });
 }
 
@@ -736,6 +785,7 @@ async function applyFilter_() {
   if (!Number.isInteger(r_f) || r_f < 1 || r_f > 500) {
     return;
   }
+  const sortby = document.getElementById("sort").value;
   const weapon = document.getElementById("weapon_").value;
   const merge = document.getElementById("merge").checked;
   const not_percent = document.getElementById("not_percent").checked;
@@ -802,12 +852,12 @@ async function applyFilter_() {
     if (!not_percent) {
       let adjustment = r_f / 100
       if (season=="all") adjustment=adjustment*(CurrentSeason-1)
-      e = Number((e/adjustment).toFixed(2))
-      y = Number((y/adjustment).toFixed(2))
-      h = Number((h/adjustment).toFixed(2))
-      a = Number((a/adjustment).toFixed(2))
-      s = Number((s/(adjustment*4)).toFixed(2))
-      d = Number((d/(adjustment*4)).toFixed(2))
+      e = smartFix(e/adjustment,adjustment)
+      y = smartFix(y/adjustment,adjustment)
+      h = smartFix(h/adjustment,adjustment)
+      a = smartFix(a/adjustment,adjustment)
+      s = smartFix(s/(adjustment*4),adjustment*4)
+      d = smartFix(d/(adjustment*4),adjustment*4)
     }
     if (d>0) {d = "+"+d};
     if (season == 2 || season == "all") {
@@ -862,7 +912,7 @@ async function applyFilter_() {
 
     result.forEach(item => {
       const group = groupMap[item.weapon] || item.weapon;
-      groupTotals[group] = (groupTotals[group] || 0) + item.合計;
+      groupTotals[group] = (groupTotals[group] || 0) + item[sortby];
     });
 
     // ① グループごとにまとめる
@@ -876,7 +926,7 @@ async function applyFilter_() {
 
     // ② グループごとの合計を出す
     const groupedArray = Object.entries(groups).map(([group, items]) => {
-      const total = items.reduce((sum, i) => sum + i.合計, 0);
+      const total = items.reduce((sum, i) => sum + i[sortby], 0);
       return { group, items, total };
     });
 
@@ -885,7 +935,7 @@ async function applyFilter_() {
 
     // ④ 各グループ内をソートしてフラット化
     result = groupedArray.flatMap(g =>
-      g.items.sort((a, b) => b.合計 - a.合計)
+      g.items.sort((a, b) => b[sortby] - a[sortby])
     );
 
     let currentRank = 0;
@@ -899,7 +949,7 @@ async function applyFilter_() {
     result.forEach((item, index) => {
       const group = groupMap[item.weapon] || item.weapon;
       const groupTotal = groupTotals[group];
-      const total = item.合計;
+      const total = item[sortby];
 
       if (index === 0) {
         currentRank = 1;
@@ -924,17 +974,17 @@ async function applyFilter_() {
     });
   } else {
     // ===== ソート =====
-    result.sort((a, b) => b.合計 - a.合計);
+    result.sort((a, b) => b[sortby] - a[sortby]);
     // ===== 順位つけ =====
     let currentRank = 0;
     let prevTotal = null;
 
     result.forEach((item, index) => {
-      if (item.合計 !== prevTotal) {
+      if (item[sortby] !== prevTotal) {
         currentRank = index + 1; // 新しい順位
       }
       item.順位 = currentRank;
-      prevTotal = item.合計;
+      prevTotal = item[sortby];
     });
   }
 
@@ -955,7 +1005,7 @@ async function applyFilter_() {
     th.innerHTML = `
       <tr>
         <th class="rk">順位</th>
-        <th>ウェポン名</th>
+        <th>ウェポン</th>
         <th class="center">エリア</th>
         <th class="center">ヤグラ</th>
         <th class="center">ホコ</th>
@@ -979,7 +1029,7 @@ async function applyFilter_() {
     th.innerHTML = `
       <tr>
         <th class="center">順位</th>
-        <th>ウェポン名</th>
+        <th>ウェポン</th>
         <th class="center">エリア</th>
         <th class="center">ヤグラ</th>
         <th class="center">ホコ</th>
@@ -992,41 +1042,80 @@ async function applyFilter_() {
 
   const tbody = document.querySelector("#statsTable tbody");
   tbody.innerHTML = "";
-  if (calc_adjust) {
-    result.forEach((item, index) => {
-      const row = document.createElement("tr");
+  if (isMobile) {
+    if (calc_adjust) {
+      result.forEach((item, index) => {
+        const row = document.createElement("tr");
 
-      row.innerHTML = `
-        <td class="center">${item.順位}</td>
-        <td>${item.weapon}</td>
-        <td class="center">${item.エリア}</td>
-        <td class="center">${item.ヤグラ}</td>
-        <td class="center">${item.ホコ}</td>
-        <td class="center">${item.アサリ}</td>
-        <td class="center">${item.合計}</td>
-        <td class="center">${item.割メイン}</td>
-        <td class="center">${item.増減}</td>
-      `;
+        row.innerHTML = `
+          <td class="center">${item.順位}</td>
+          <td class="hidden">${item.weapon}</td>
+          <td class="right">${item.エリア}</td>
+          <td class="right">${item.ヤグラ}</td>
+          <td class="right">${item.ホコ}</td>
+          <td class="right">${item.アサリ}</td>
+          <td class="right">${item.合計}</td>
+          <td class="right">${item.割メイン}</td>
+          <td class="center">${item.増減}</td>
+        `;
 
-      tbody.appendChild(row);
-    });
+        tbody.appendChild(row);
+      });
+    } else {
+      result.forEach((item, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td class="center">${item.順位}</td>
+          <td class="hidden">${item.weapon}</td>
+          <td class="right">${item.エリア}</td>
+          <td class="right">${item.ヤグラ}</td>
+          <td class="right">${item.ホコ}</td>
+          <td class="right">${item.アサリ}</td>
+          <td class="right">${item.合計}</td>
+          <td class="center">${item.増減}</td>
+        `;
+
+        tbody.appendChild(row);
+      });
+    }
   } else {
-    result.forEach((item, index) => {
-      const row = document.createElement("tr");
+    if (calc_adjust) {
+      result.forEach((item, index) => {
+        const row = document.createElement("tr");
 
-      row.innerHTML = `
-        <td class="center">${item.順位}</td>
-        <td>${item.weapon}</td>
-        <td class="center">${item.エリア}</td>
-        <td class="center">${item.ヤグラ}</td>
-        <td class="center">${item.ホコ}</td>
-        <td class="center">${item.アサリ}</td>
-        <td class="center">${item.合計}</td>
-        <td class="center">${item.増減}</td>
-      `;
+        row.innerHTML = `
+          <td class="center">${item.順位}</td>
+          <td>${item.weapon}</td>
+          <td class="right">${item.エリア}</td>
+          <td class="right">${item.ヤグラ}</td>
+          <td class="right">${item.ホコ}</td>
+          <td class="right">${item.アサリ}</td>
+          <td class="right">${item.合計}</td>
+          <td class="right">${item.割メイン}</td>
+          <td class="center">${item.増減}</td>
+        `;
 
-      tbody.appendChild(row);
-    });
+        tbody.appendChild(row);
+      });
+    } else {
+      result.forEach((item, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td class="center">${item.順位}</td>
+          <td>${item.weapon}</td>
+          <td class="right">${item.エリア}</td>
+          <td class="right">${item.ヤグラ}</td>
+          <td class="right">${item.ホコ}</td>
+          <td class="right">${item.アサリ}</td>
+          <td class="right">${item.合計}</td>
+          <td class="center">${item.増減}</td>
+        `;
+
+        tbody.appendChild(row);
+      });
+    }
   }
 const rows = document.querySelectorAll("#statsTable tbody tr");
 const weaponCol = 1;
@@ -1121,8 +1210,13 @@ rows.forEach(row => {
   if (!iconUrl) return;
   img.alt = name;
   img.src = iconUrl;
-  if (weapon == "sub" || weapon == "special") img.classList.add("weapon-icon_");
-  else img.classList.add("weapon-icon");
+  if (isMobile) {
+    if (weapon == "sub" || weapon == "special") img.classList.add("weapon-iconmb_");
+    else img.classList.add("weapon-iconmb");
+  } else {
+    if (weapon == "sub" || weapon == "special") img.classList.add("weapon-icon_");
+    else img.classList.add("weapon-icon");
+  }
 
   // テキストの前に追加
   cell.prepend(img);  
@@ -1141,7 +1235,8 @@ async function display() {
     fetch("data/asari.json").then(res => res.json())
   ]);
   const season = Number.isInteger(Number(document.getElementById("season__").value))
-  ? Number(document.getElementById("season__").value) : document.getElementById("season__").value
+  ? Number(document.getElementById("season__").value) : document.getElementById("season__").value;
+  const sortby = document.getElementById("sort_").value;
   const not_percent = document.getElementById("not_percent_").checked;
   let choices = Array.from(document.getElementById("choice").querySelectorAll('.tag')).map(tag => {
     return tag.childNodes[0].textContent.trim();
@@ -1218,12 +1313,12 @@ async function display() {
       }
       tr.innerHTML = `
         <td class="center">${getSeason(season)}</td>
-        <td class="center">${e}</td>
-        <td class="center">${y}</td>
-        <td class="center">${h}</td>
-        <td class="center">${a}</td>
-        <td class="center">${t}</td>
-        <td class="center">
+        <td class="right">${e.toFixed(1)}</td>
+        <td class="right">${y.toFixed(1)}</td>
+        <td class="right">${h.toFixed(1)}</td>
+        <td class="right">${a.toFixed(1)}</td>
+        <td class="right">${t.toFixed(2)}</td>
+        <td class="right">
           ${season === 2 ? "-" : (d > 0 ? "+" + d : d)}
         </td>
       `;
@@ -1292,7 +1387,7 @@ async function display() {
         diffcell.style.backgroundColor = `rgba(88, 73, 255, ${alpha})`;
       }
     });
-    lineChart()
+    lineChart(not_percent)
   } else {
     table.innerHTML = `
       <colgroup>
@@ -1308,7 +1403,7 @@ async function display() {
       <thead>
         <tr>
           <th class="center">順位</th>
-          <th>ウェポン名</th>
+          <th>ウェポン</th>
           <th class="center">エリア</th>
           <th class="center">ヤグラ</th>
           <th class="center">ホコ</th>
@@ -1342,12 +1437,12 @@ async function display() {
       if (!not_percent) {
         let adjustment = 5;
         if (season == "all") adjustment = adjustment * (CurrentSeason-1)
-        e = Number((e/adjustment).toFixed(2))
-        y = Number((y/adjustment).toFixed(2))
-        h = Number((h/adjustment).toFixed(2))
-        a = Number((a/adjustment).toFixed(2))
-        s = Number((s/(adjustment*4)).toFixed(2))
-        d = Number((d/(adjustment*4)).toFixed(2))
+        e = smartFix(e/adjustment,adjustment)
+        y = smartFix(y/adjustment,adjustment)
+        h = smartFix(h/adjustment,adjustment)
+        a = smartFix(a/adjustment,adjustment)
+        s = smartFix(s/(adjustment*4),adjustment*4)
+        d = smartFix(d/(adjustment*4),adjustment*4)
       }
       if (d>0) {d = "+"+d};
       if (season == 2 || season == "all") {
@@ -1364,34 +1459,54 @@ async function display() {
       });
     });
     // ===== ソート =====
-    result.sort((a, b) => b.合計 - a.合計);
+    result.sort((a, b) => b[sortby] - a[sortby]);
     // ===== 順位つけ =====
     let currentRank = 0;
     let prevTotal = null;
 
     result.forEach((item, index) => {
-      if (item.合計 !== prevTotal) {
+      if (item[sortby] !== prevTotal) {
         currentRank = index + 1; // 新しい順位
       }
       item.順位 = currentRank;
-      prevTotal = item.合計;
+      prevTotal = item[sortby];
     });
-    result.forEach((item, index) => {
-      const row = document.createElement("tr");
+    if (isMobile) {
+      result.forEach((item, index) => {
+        const row = document.createElement("tr");
 
-      row.innerHTML = `
-        <td class="center">${item.順位}</td>
-        <td>${item.weapon}</td>
-        <td class="center">${item.エリア}</td>
-        <td class="center">${item.ヤグラ}</td>
-        <td class="center">${item.ホコ}</td>
-        <td class="center">${item.アサリ}</td>
-        <td class="center">${item.合計}</td>
-        <td class="center">${item.増減}</td>
-      `;
+        row.innerHTML = `
+          <td class="center">${item.順位}</td>
+          <td class="hidden">${item.weapon}</td>
+          <td class="center">${item.エリア}</td>
+          <td class="center">${item.ヤグラ}</td>
+          <td class="center">${item.ホコ}</td>
+          <td class="center">${item.アサリ}</td>
+          <td class="center">${item.合計}</td>
+          <td class="center">${item.増減}</td>
+        `;
 
-      tbody.appendChild(row);
-    });
+        tbody.appendChild(row);
+      });
+    } else {
+      result.forEach((item, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td class="center">${item.順位}</td>
+          <td>${item.weapon}</td>
+          <td class="right">${item.エリア}</td>
+          <td class="right">${item.ヤグラ}</td>
+          <td class="right">${item.ホコ}</td>
+          <td class="right">${item.アサリ}</td>
+          <td class="right">${item.合計}</td>
+          <td class="center">${item.増減}</td>
+        `;
+
+        tbody.appendChild(row);
+      });
+    };
+
     const rows = document.querySelectorAll("#analysisTable tbody tr");
     const weaponCol = 1;
     const normalCols = [2, 3, 4, 5]; // エリア〜アサリ
@@ -1464,7 +1579,8 @@ async function display() {
       if (!iconUrl) return;
       img.alt = name;
       img.src = iconUrl;
-      img.classList.add("weapon-icon");
+      if (isMobile) img.classList.add("weapon-iconmb")
+      else img.classList.add("weapon-icon");
 
       // テキストの前に追加
       cell.prepend(img);  
