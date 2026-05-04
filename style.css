@@ -177,6 +177,12 @@ th.center {
 td.center {
     text-align: center;
 }
+td.right {
+    text-align: right;
+}
+td.hidden {
+    font-size: 0;
+}
 
 th.rk {
     text-align: center;
@@ -219,6 +225,20 @@ tr:nth-child(even) {
     transform-origin: center;
 }
 
+.weapon-iconmb {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    transform: scale(1.5);
+    transform-origin: center;
+}
+.weapon-iconmb_ {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    transform: scale(1.2);
+    transform-origin: center;
+}
 .rule-icon {
     width: 22px;
     height: 22px;
