@@ -1304,21 +1304,21 @@ async function display() {
       const tr = document.createElement("tr");
       let e = eriaCount, y = yaguraCount, h = hokoCount, a = asariCount, t = total, d = diff;
       if (!not_percent) {
-        e = e/5
-        y = y/5
-        h = h/5
-        a = a/5
-        t = t/20
-        d = d/20
+        e = (e/5).toFixed(1)
+        y = (y/5).toFixed(1)
+        h = (h/5).toFixed(1)
+        a = (a/5).toFixed(1)
+        t = (t/20).toFixed(2)
+        d = (d/20).toFixed(2)
       }
       tr.innerHTML = `
         <td class="center">${getSeason(season)}</td>
-        <td class="right">${e.toFixed(1)}</td>
-        <td class="right">${y.toFixed(1)}</td>
-        <td class="right">${h.toFixed(1)}</td>
-        <td class="right">${a.toFixed(1)}</td>
-        <td class="right">${t.toFixed(2)}</td>
-        <td class="right">
+        <td class="right">${e}</td>
+        <td class="right">${y}</td>
+        <td class="right">${h}</td>
+        <td class="right">${a}</td>
+        <td class="right">${t}</td>
+        <td class="center">
           ${season === 2 ? "-" : (d > 0 ? "+" + d : d)}
         </td>
       `;
