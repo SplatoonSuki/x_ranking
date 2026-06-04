@@ -1,4 +1,4 @@
-const CurrentSeason = 15
+const CurrentSeason = 16
 
 const isMobile = (window.innerWidth <= 768) ? true : false;
 
@@ -74,7 +74,8 @@ function getSeason(num) {
     12: "2025夏",
     13: "2025秋",
     14: "2025冬",
-    15: "2026春"
+    15: "2026春",
+    16: "2026夏"
   };
 
   return seasons[num] || "不明";
@@ -439,7 +440,7 @@ function lineChart(b) {
   container.style.height = "";
   container2.style.height = 0;
   const labels = ["2022冬", "2023春", "2023夏", "2023秋", "2023冬", "2024春", "2024夏", 
-    "2024秋", "2024冬", "2025春", "2025夏", "2025秋", "2025冬", "2026春"]
+    "2024秋", "2024冬", "2025春", "2025夏", "2025秋", "2025冬", "2026春", "2026夏"]
   const title = b ? "人数" : "割合"
   const ctx = document.getElementById('mainChart2');
   const rows = document.querySelectorAll("#analysisTable tbody tr");
