@@ -13,12 +13,12 @@
 </head>
 <body>
   <header>
-    <button onclick="showPage('ranking')" class="active-btn">Xランキング</button>
-    <button onclick="showPage('statistics')">統計</button>
+    <button onclick="showPage('ranking')">Xランキング</button>
+    <button onclick="showPage('statistics')" class="active-btn">統計</button>
     <button onclick="showPage('analysis')">ウェポン別分析</button>
   </header>
   <div class="content">
-    <div id="ranking" class="page active">
+    <div id="ranking" class="page">
       <p class="note">オーダー系統など完全に性能が同一のブキも異なるものとして扱っています。</p>
       <div class="filter-box">
         <!-- シーズン -->
@@ -39,7 +39,8 @@
             <option value="12">2025夏（2025/06/01~2025/09/01）</option>
             <option value="13">2025秋（2025/09/01~2025/12/01）</option>
             <option value="14">2025冬（2025/12/01~2026/03/01）</option>
-            <option value="15" selected>2026春（2026/03/01~）</option>
+            <option value="15">2026春（2026/03/01~2026/06/01）</option>
+            <option value="16" selected>2026夏（2026/06/01~）</option>
           </select>
         </div>
 
@@ -99,7 +100,7 @@
         </table>
       </div>
     </div>
-    <div id="statistics" class="page">
+    <div id="statistics" class="page active">
       <div class="filter-box">
         
         <!-- シーズン -->
@@ -120,7 +121,8 @@
             <option value="12">2025夏（2025/06/01~2025/09/01）</option>
             <option value="13">2025秋（2025/09/01~2025/12/01）</option>
             <option value="14">2025冬（2025/12/01~2026/03/01）</option>
-            <option value="15" selected>2026春（2026/03/01~）</option>
+            <option value="15">2026春（2026/03/01~2026/06/01）</option>
+            <option value="16" selected>2026夏（2026/06/01~）</option>
           </select>
         </div>
 
@@ -258,8 +260,8 @@
             <option value="11">2025春（2025/03/01~2025/06/01）</option>
             <option value="12">2025夏（2025/06/01~2025/09/01）</option>
             <option value="13">2025秋（2025/09/01~2025/12/01）</option>
-            <option value="14">2025冬（2025/12/01~2026/03/01）</option>
-            <option value="15" selected>2026春（2026/03/01~）</option>
+            <option value="15">2026春（2026/03/01~2026/06/01）</option>
+            <option value="16" selected>2026夏（2026/06/01~）</option>
           </select>
         </div>
         <!-- ソート -->
