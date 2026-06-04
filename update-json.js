@@ -6,10 +6,10 @@
   const asaridata = JSON.parse(fs.readFileSync("data/asari.json", "utf-8"));
   const [eria_new, yagura_new, hoko_new, asari_new
   ] = await Promise.all([
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-15.splatzones.json').then(res => res.json()),
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-15.towercontrol.json').then(res => res.json()),
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-15.rainmaker.json').then(res => res.json()),
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-15.clamblitz.json').then(res => res.json())
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-16.splatzones.json').then(res => res.json()),
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-16.towercontrol.json').then(res => res.json()),
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-16.rainmaker.json').then(res => res.json()),
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-16.clamblitz.json').then(res => res.json())
   ]);
   const weaponNameMap = {
     "Splattershot": "スプラシューター",
@@ -191,7 +191,7 @@
       weapon: weaponNameMap[edge.node.weapon.name] || edge.node.weapon.name,
       name: edge.node.name,
       power: edge.node.xPower,
-      season: 15
+      season: 16
     };
   });
   const hoko = hoko_new.data.node.xRankingGl.edges.map(edge => {
@@ -199,7 +199,7 @@
       weapon: weaponNameMap[edge.node.weapon.name] || edge.node.weapon.name,
       name: edge.node.name,
       power: edge.node.xPower,
-      season: 15
+      season: 16
     };
   });
   const yagura = yagura_new.data.node.xRankingLf.edges.map(edge => {
@@ -207,7 +207,7 @@
       weapon: weaponNameMap[edge.node.weapon.name] || edge.node.weapon.name,
       name: edge.node.name,
       power: edge.node.xPower,
-      season: 15
+      season: 16
     };
   });
 
@@ -216,7 +216,7 @@
       weapon: weaponNameMap[edge.node.weapon.name] || edge.node.weapon.name,
       name: edge.node.name,
       power: edge.node.xPower,
-      season: 15
+      season: 16
     };
   });
 
