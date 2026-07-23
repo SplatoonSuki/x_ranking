@@ -42008,13 +42008,13 @@
   {
     "weapon": ".52ガロン",
     "name": "うたたね",
-    "power": 3516,
+    "power": 3546,
     "season": 16
   },
   {
     "weapon": ".52ガロン",
     "name": "chaeun",
-    "power": 3511,
+    "power": 3456.7,
     "season": 16
   },
   {
@@ -42048,9 +42048,9 @@
     "season": 16
   },
   {
-    "weapon": "フルイドⅤ",
-    "name": "ホコまこうどんホコ",
-    "power": 3303.5,
+    "weapon": "L3リールガン箔",
+    "name": "えん",
+    "power": 3239.1,
     "season": 16
   },
   {
@@ -42066,6 +42066,12 @@
     "season": 16
   },
   {
+    "weapon": "Rブラスターエリートデコ",
+    "name": "ヨグ=ソトースのにわ",
+    "power": 3225.5,
+    "season": 16
+  },
+  {
     "weapon": ".96ガロン",
     "name": "GCSH3629",
     "power": 3212.6,
@@ -42078,27 +42084,9 @@
     "season": 16
   },
   {
-    "weapon": "デンタルワイパーミント",
-    "name": "ふゆう",
-    "power": 3209.3,
-    "season": 16
-  },
-  {
-    "weapon": "Rブラスターエリートデコ",
-    "name": "ヨグ=ソトースのにわ",
-    "power": 3205.5,
-    "season": 16
-  },
-  {
     "weapon": ".52ガロン",
     "name": "RD777",
     "power": 3204.9,
-    "season": 16
-  },
-  {
-    "weapon": "L3リールガン箔",
-    "name": "えん",
-    "power": 3203.5,
     "season": 16
   },
   {
@@ -42108,9 +42096,21 @@
     "season": 16
   },
   {
+    "weapon": "フルイドⅤ",
+    "name": "ワンだふる！！",
+    "power": 3196.2,
+    "season": 16
+  },
+  {
     "weapon": "N-ZAP85",
     "name": "デデンアルちゃんくん",
     "power": 3196,
+    "season": 16
+  },
+  {
+    "weapon": "フルイドⅤ",
+    "name": "ホコまこうどんホコ",
+    "power": 3195,
     "season": 16
   },
   {
@@ -42120,9 +42120,9 @@
     "season": 16
   },
   {
-    "weapon": "フルイドⅤ",
-    "name": "ワンだふる！！",
-    "power": 3183.4,
+    "weapon": ".52ガロン",
+    "name": "4くみのドブちんぱん",
+    "power": 3178.2,
     "season": 16
   },
   {
@@ -42132,9 +42132,27 @@
     "season": 16
   },
   {
+    "weapon": ".52ガロン",
+    "name": "そっぴなのだ！！",
+    "power": 3165.9,
+    "season": 16
+  },
+  {
+    "weapon": ".96ガロン",
+    "name": "しゅーたようつべ",
+    "power": 3165.2,
+    "season": 16
+  },
+  {
     "weapon": "デュアルスイーパー",
     "name": "スリュー↑×←→○",
     "power": 3163.4,
+    "season": 16
+  },
+  {
+    "weapon": ".52ガロン",
+    "name": "もろなめこ",
+    "power": 3162,
     "season": 16
   },
   {
@@ -42150,9 +42168,15 @@
     "season": 16
   },
   {
+    "weapon": "スプラシューター",
+    "name": "しゅん　",
+    "power": 3149.4,
+    "season": 16
+  },
+  {
     "weapon": ".52ガロン",
-    "name": "ななめこ",
-    "power": 3147,
+    "name": "mui61.52",
+    "power": 3145.8,
     "season": 16
   },
   {
@@ -42168,15 +42192,9 @@
     "season": 16
   },
   {
-    "weapon": "スプラシューター",
-    "name": "しゅん　",
-    "power": 3119.4,
-    "season": 16
-  },
-  {
-    "weapon": "スプラチャージャー",
-    "name": "e",
-    "power": 3117.7,
+    "weapon": ".96ガロンデコ",
+    "name": "ĢĢĢ_Лиса ",
+    "power": 3126.7,
     "season": 16
   },
   {
@@ -42186,39 +42204,9 @@
     "season": 16
   },
   {
-    "weapon": ".96ガロンデコ",
-    "name": "ĢĢĢ_Лиса ",
-    "power": 3116.7,
-    "season": 16
-  },
-  {
-    "weapon": ".52ガロン",
-    "name": "4くみのドブちんぱん",
-    "power": 3115.3,
-    "season": 16
-  },
-  {
-    "weapon": ".96ガロン",
-    "name": "しゅーたようつべ",
-    "power": 3115.2,
-    "season": 16
-  },
-  {
     "weapon": "オーダースロッシャーレプリカ",
     "name": "Remember",
     "power": 3114.2,
-    "season": 16
-  },
-  {
-    "weapon": ".52ガロン",
-    "name": "mui61.52",
-    "power": 3110.5,
-    "season": 16
-  },
-  {
-    "weapon": "N-ZAP85",
-    "name": "がんばろう",
-    "power": 3103.8,
     "season": 16
   },
   {
@@ -42231,12 +42219,6 @@
     "weapon": "スパッタリー",
     "name": "★★けーすけ★★",
     "power": 3100.1,
-    "season": 16
-  },
-  {
-    "weapon": ".52ガロン",
-    "name": "そっぴなのだ！！",
-    "power": 3098.3,
     "season": 16
   },
   {
@@ -42276,15 +42258,33 @@
     "season": 16
   },
   {
+    "weapon": "もみじシューター",
+    "name": "Scorpio",
+    "power": 3059.9,
+    "season": 16
+  },
+  {
     "weapon": "リッター4Kカスタム",
     "name": "エル！",
     "power": 3057.7,
     "season": 16
   },
   {
+    "weapon": "ドライブワイパー",
+    "name": "コチム",
+    "power": 3057,
+    "season": 16
+  },
+  {
     "weapon": "デュアルスイーパー",
     "name": "かめちゃん",
     "power": 3054.2,
+    "season": 16
+  },
+  {
+    "weapon": "デンタルワイパーミント",
+    "name": "ふゆう",
+    "power": 3051.5,
     "season": 16
   },
   {
@@ -42297,6 +42297,12 @@
     "weapon": "スパッタリー",
     "name": "ばやしマン！",
     "power": 3048.8,
+    "season": 16
+  },
+  {
+    "weapon": "スプラスコープ",
+    "name": "シバケイ　ようつべ",
+    "power": 3047,
     "season": 16
   },
   {
@@ -42324,15 +42330,21 @@
     "season": 16
   },
   {
+    "weapon": "スパッタリー",
+    "name": "ぶきれん7/20～",
+    "power": 3041.1,
+    "season": 16
+  },
+  {
     "weapon": "バレルスピナー",
     "name": "だんぞう",
     "power": 3040.2,
     "season": 16
   },
   {
-    "weapon": "もみじシューター",
-    "name": "Scorpio",
-    "power": 3038.8,
+    "weapon": ".96ガロン",
+    "name": "かみさまのきまぐれ",
+    "power": 3039,
     "season": 16
   },
   {
@@ -42362,7 +42374,7 @@
   {
     "weapon": ".52ガロン",
     "name": "らむね*",
-    "power": 3029.7,
+    "power": 3031.6,
     "season": 16
   },
   {
@@ -42378,33 +42390,33 @@
     "season": 16
   },
   {
-    "weapon": "スプラスコープ",
-    "name": "シバケイ　ようつべ",
-    "power": 3027,
-    "season": 16
-  },
-  {
-    "weapon": "スパッタリー",
-    "name": "フォニィ",
-    "power": 3024.7,
-    "season": 16
-  },
-  {
     "weapon": "シャープマーカー",
     "name": "シューマ",
     "power": 3024,
     "season": 16
   },
   {
-    "weapon": "ドライブワイパー",
-    "name": "コチム",
-    "power": 3021.6,
+    "weapon": "ホットブラスターカスタム",
+    "name": "がんばろう",
+    "power": 3022.6,
+    "season": 16
+  },
+  {
+    "weapon": ".52ガロン",
+    "name": "†★№√",
+    "power": 3020.7,
     "season": 16
   },
   {
     "weapon": "4Kスコープ",
     "name": "りんチャンネル",
     "power": 3019.7,
+    "season": 16
+  },
+  {
+    "weapon": "スプラチャージャー",
+    "name": "e",
+    "power": 3018.4,
     "season": 16
   },
   {
@@ -42426,6 +42438,12 @@
     "season": 16
   },
   {
+    "weapon": "スパッタリー・ヒュー",
+    "name": "フォニィ",
+    "power": 3014.5,
+    "season": 16
+  },
+  {
     "weapon": "スパッタリー",
     "name": "める",
     "power": 3014.3,
@@ -42444,12 +42462,6 @@
     "season": 16
   },
   {
-    "weapon": ".52ガロン",
-    "name": "†★№√",
-    "power": 3010.7,
-    "season": 16
-  },
-  {
     "weapon": "L3リールガン箔",
     "name": "やぐちゃねる！",
     "power": 3006.3,
@@ -42459,12 +42471,6 @@
     "weapon": ".52ガロン",
     "name": "★☆ふぃねら☆★",
     "power": 3004.8,
-    "season": 16
-  },
-  {
-    "weapon": ".96ガロン",
-    "name": "かみさまのきまぐれ",
-    "power": 3004,
     "season": 16
   },
   {
@@ -42480,21 +42486,9 @@
     "season": 16
   },
   {
-    "weapon": "ノヴァブラスターネオ",
-    "name": "ぽむ",
-    "power": 3001.6,
-    "season": 16
-  },
-  {
     "weapon": ".52ガロンデコ",
     "name": "ドパガキヒーロー",
     "power": 3000.8,
-    "season": 16
-  },
-  {
-    "weapon": "スパッタリー",
-    "name": "ぶきれん7/20～",
-    "power": 2996.1,
     "season": 16
   },
   {
@@ -42504,21 +42498,9 @@
     "season": 16
   },
   {
-    "weapon": "スパッタリー",
-    "name": "ヤンデレとありーる",
-    "power": 2987.9,
-    "season": 16
-  },
-  {
-    "weapon": "フルイドⅤ",
-    "name": "3k",
-    "power": 2982.7,
-    "season": 16
-  },
-  {
-    "weapon": "パブロ・ヒュー",
-    "name": "Ŕx_sigre*",
-    "power": 2982.7,
+    "weapon": "スプラシューター",
+    "name": "eternity",
+    "power": 2985.9,
     "season": 16
   },
   {
@@ -42528,15 +42510,15 @@
     "season": 16
   },
   {
-    "weapon": ".96ガロンデコ",
-    "name": "もも",
-    "power": 2976.2,
+    "weapon": "スパッタリー",
+    "name": "ヤンデレとありーる",
+    "power": 2979.9,
     "season": 16
   },
   {
-    "weapon": "スプラローラー",
-    "name": "カビゴンかわいい！",
-    "power": 2973.8,
+    "weapon": "スプラシューター",
+    "name": "algorithm.",
+    "power": 2979.8,
     "season": 16
   },
   {
@@ -42549,12 +42531,6 @@
     "weapon": "フルイドⅤ",
     "name": "ざむらい",
     "power": 2966.4,
-    "season": 16
-  },
-  {
-    "weapon": "スプラシューター",
-    "name": "algorithm.",
-    "power": 2964.8,
     "season": 16
   },
   {
@@ -42588,15 +42564,21 @@
     "season": 16
   },
   {
-    "weapon": "スプラシューター",
-    "name": "eternity",
-    "power": 2955.9,
+    "weapon": "スプラローラー",
+    "name": "カビゴンかわいい！",
+    "power": 2952.3,
     "season": 16
   },
   {
-    "weapon": ".96ガロン",
-    "name": "むぺろ",
-    "power": 2953.1,
+    "weapon": "キャンピングシェルター",
+    "name": "kotepote-5",
+    "power": 2950.2,
+    "season": 16
+  },
+  {
+    "weapon": "デンタルワイパースミ",
+    "name": "かんりしゃイベント",
+    "power": 2949.6,
     "season": 16
   },
   {
@@ -42636,15 +42618,15 @@
     "season": 16
   },
   {
-    "weapon": "スプラシューター煌",
-    "name": "chinこころんθ⊃",
-    "power": 2942.9,
+    "weapon": "スプラシューター",
+    "name": "もう、おしまいだよ？",
+    "power": 2943.4,
     "season": 16
   },
   {
-    "weapon": "スパッタリー・ヒュー",
-    "name": "ねばーらんど",
-    "power": 2941.2,
+    "weapon": ".52ガロン",
+    "name": "とむすけとむお",
+    "power": 2942,
     "season": 16
   },
   {
@@ -42678,15 +42660,33 @@
     "season": 16
   },
   {
+    "weapon": "デュアルスイーパー",
+    "name": "あいにじょう",
+    "power": 2934.3,
+    "season": 16
+  },
+  {
+    "weapon": "スプラスコープ",
+    "name": "Ŕx_sigre*",
+    "power": 2934.2,
+    "season": 16
+  },
+  {
     "weapon": "フィンセント",
     "name": "みず~",
     "power": 2932.5,
     "season": 16
   },
   {
-    "weapon": "ドライブワイパー",
-    "name": "イサヤッマ　ようつべ",
-    "power": 2930.4,
+    "weapon": "ノヴァブラスターネオ",
+    "name": "ぽむ",
+    "power": 2930.5,
+    "season": 16
+  },
+  {
+    "weapon": "フルイドⅤ",
+    "name": "CC",
+    "power": 2929.8,
     "season": 16
   },
   {
@@ -42708,9 +42708,9 @@
     "season": 16
   },
   {
-    "weapon": ".52ガロン",
-    "name": "とむすけとむお",
-    "power": 2927,
+    "weapon": "スプラシューター",
+    "name": "bot",
+    "power": 2926.3,
     "season": 16
   },
   {
@@ -42732,6 +42732,12 @@
     "season": 16
   },
   {
+    "weapon": ".96ガロンデコ",
+    "name": "もも",
+    "power": 2918.5,
+    "season": 16
+  },
+  {
     "weapon": "ボールドマーカー",
     "name": "ハンコブンブンTV",
     "power": 2915.1,
@@ -42750,15 +42756,39 @@
     "season": 16
   },
   {
+    "weapon": "スパッタリー",
+    "name": "ねえれなくん、じつは",
+    "power": 2912.8,
+    "season": 16
+  },
+  {
+    "weapon": "フルイドⅤ",
+    "name": "mom",
+    "power": 2912.7,
+    "season": 16
+  },
+  {
     "weapon": "リッター4Kカスタム",
     "name": "yachi8000",
     "power": 2912.4,
     "season": 16
   },
   {
-    "weapon": ".52ガロン",
-    "name": "∞こうた∞チワワ",
-    "power": 2908.4,
+    "weapon": "クーゲルシュライバー",
+    "name": "もこまるん",
+    "power": 2912.3,
+    "season": 16
+  },
+  {
+    "weapon": "スプラシューター煌",
+    "name": "vertex†Gay",
+    "power": 2908.5,
+    "season": 16
+  },
+  {
+    "weapon": "ドライブワイパー",
+    "name": "イサヤッマ　ようつべ",
+    "power": 2908.3,
     "season": 16
   },
   {
@@ -42774,15 +42804,15 @@
     "season": 16
   },
   {
-    "weapon": "デュアルスイーパー",
-    "name": "あいにじょう",
-    "power": 2907,
+    "weapon": "デンタルワイパーミント",
+    "name": "たのしくプレイしたい",
+    "power": 2905.9,
     "season": 16
   },
   {
-    "weapon": "デンタルワイパースミ",
-    "name": "かんりしゃイベント",
-    "power": 2904.6,
+    "weapon": "Rブラスターエリート",
+    "name": "モアベリサマー",
+    "power": 2904.4,
     "season": 16
   },
   {
@@ -42792,21 +42822,27 @@
     "season": 16
   },
   {
+    "weapon": ".52ガロン",
+    "name": "lastmemory",
+    "power": 2898.1,
+    "season": 16
+  },
+  {
     "weapon": "バレルスピナー",
     "name": "RD5815",
     "power": 2897.2,
     "season": 16
   },
   {
-    "weapon": "N-ZAP85",
-    "name": "ちっちこ1",
-    "power": 2895.2,
+    "weapon": "ヒッセン・ヒュー",
+    "name": "Promise Me",
+    "power": 2895.9,
     "season": 16
   },
   {
-    "weapon": "キャンピングシェルター",
-    "name": "kotepote-4",
-    "power": 2894.8,
+    "weapon": "N-ZAP85",
+    "name": "ちっちこ1",
+    "power": 2895.2,
     "season": 16
   },
   {
@@ -42852,12 +42888,6 @@
     "season": 16
   },
   {
-    "weapon": "キャンピングシェルター",
-    "name": "MT～～",
-    "power": 2888.3,
-    "season": 16
-  },
-  {
     "weapon": ".96ガロン",
     "name": "りうくん",
     "power": 2887.7,
@@ -42882,8 +42912,8 @@
     "season": 16
   },
   {
-    "weapon": "フルイドⅤ",
-    "name": "mom",
+    "weapon": "N-ZAP85",
+    "name": "じーぴー",
     "power": 2880.8,
     "season": 16
   },
@@ -42891,6 +42921,12 @@
     "weapon": ".96ガロン",
     "name": "るー",
     "power": 2880.4,
+    "season": 16
+  },
+  {
+    "weapon": "スパッタリー・ヒュー",
+    "name": "ねばーらんど",
+    "power": 2880.2,
     "season": 16
   },
   {
@@ -42924,12 +42960,6 @@
     "season": 16
   },
   {
-    "weapon": "フルイドⅤ",
-    "name": "CC",
-    "power": 2877.2,
-    "season": 16
-  },
-  {
     "weapon": "N-ZAP85",
     "name": "うらめしや～",
     "power": 2877,
@@ -42945,12 +42975,6 @@
     "weapon": "ワイドローラー",
     "name": "Z",
     "power": 2870.8,
-    "season": 16
-  },
-  {
-    "weapon": "フルイドⅤ",
-    "name": "ガチホコ",
-    "power": 2870.6,
     "season": 16
   },
   {
@@ -42984,39 +43008,21 @@
     "season": 16
   },
   {
-    "weapon": "ヒッセン・ヒュー",
-    "name": "Promise Me",
-    "power": 2865.9,
-    "season": 16
-  },
-  {
     "weapon": "N-ZAP85",
     "name": "ゆめをさがすアメマル",
     "power": 2863.6,
     "season": 16
   },
   {
-    "weapon": "4Kスコープカスタム",
-    "name": "ぅ・ぱうぱとろーる♪",
-    "power": 2861.6,
+    "weapon": "ジェットスイーパー",
+    "name": "デスサイズヘルEW",
+    "power": 2863,
     "season": 16
   },
   {
     "weapon": "スプラシューター",
     "name": "るんるん　ようつべべ",
     "power": 2861.5,
-    "season": 16
-  },
-  {
-    "weapon": "ダイナモローラー",
-    "name": "or",
-    "power": 2860.7,
-    "season": 16
-  },
-  {
-    "weapon": "Rブラスターエリート",
-    "name": "モアベリサマー",
-    "power": 2859.4,
     "season": 16
   },
   {
@@ -43050,6 +43056,12 @@
     "season": 16
   },
   {
+    "weapon": ".96ガロン",
+    "name": "KY_くんくん",
+    "power": 2856.4,
+    "season": 16
+  },
+  {
     "weapon": "LACT-450デコ",
     "name": "コジャケサラダ　つべ",
     "power": 2855.8,
@@ -43068,14 +43080,8 @@
     "season": 16
   },
   {
-    "weapon": "ノーチラス47",
-    "name": "ひめみや",
-    "power": 2851.6,
-    "season": 16
-  },
-  {
-    "weapon": "スプラシューター",
-    "name": "もう、おしまいだよ？",
+    "weapon": ".96ガロン",
+    "name": "むぺろ",
     "power": 2851.4,
     "season": 16
   },
@@ -43104,9 +43110,21 @@
     "season": 16
   },
   {
+    "weapon": "ノーチラス79",
+    "name": "ひめみや",
+    "power": 2848.5,
+    "season": 16
+  },
+  {
     "weapon": "ホットブラスター",
     "name": "イカマンTVようつべ",
     "power": 2847.9,
+    "season": 16
+  },
+  {
+    "weapon": "フルイドⅤ",
+    "name": "ゆいいつoh",
+    "power": 2847.1,
     "season": 16
   },
   {
@@ -43122,9 +43140,33 @@
     "season": 16
   },
   {
+    "weapon": "ダイナモローラー",
+    "name": "or",
+    "power": 2845.7,
+    "season": 16
+  },
+  {
+    "weapon": "ダイナモローラー",
+    "name": "セイコマート★",
+    "power": 2844.9,
+    "season": 16
+  },
+  {
     "weapon": "デュアルスイーパー",
     "name": "はなにぼうれい",
     "power": 2844.8,
+    "season": 16
+  },
+  {
+    "weapon": "スプラチャージャー",
+    "name": "SNAKEMAN",
+    "power": 2844.4,
+    "season": 16
+  },
+  {
+    "weapon": "ボトルガイザー",
+    "name": "qkaf:",
+    "power": 2844.1,
     "season": 16
   },
   {
@@ -43158,18 +43200,6 @@
     "season": 16
   },
   {
-    "weapon": ".52ガロン",
-    "name": "やすらか",
-    "power": 2842.2,
-    "season": 16
-  },
-  {
-    "weapon": "スプラシューター",
-    "name": "ながのめい",
-    "power": 2842,
-    "season": 16
-  },
-  {
     "weapon": "スプラシューターコラボ",
     "name": "スシコラメェン",
     "power": 2840.2,
@@ -43188,15 +43218,15 @@
     "season": 16
   },
   {
-    "weapon": ".52ガロン",
-    "name": "lastmemory",
-    "power": 2838.1,
+    "weapon": "4Kスコープ",
+    "name": "ぅ・ぱうぱとろーる♪",
+    "power": 2837,
     "season": 16
   },
   {
-    "weapon": "デンタルワイパーミント",
-    "name": "zin",
-    "power": 2837.6,
+    "weapon": "フルイドⅤ",
+    "name": "3k",
+    "power": 2836.9,
     "season": 16
   },
   {
@@ -43230,15 +43260,27 @@
     "season": 16
   },
   {
+    "weapon": "N-ZAP85",
+    "name": "オなっちゃん",
+    "power": 2833.4,
+    "season": 16
+  },
+  {
     "weapon": "L3リールガンD",
     "name": "コーヒー",
     "power": 2833.2,
     "season": 16
   },
   {
-    "weapon": "フルイドⅤ",
-    "name": "ゆいいつoh",
-    "power": 2832.1,
+    "weapon": "ホットブラスターカスタム",
+    "name": "やみおちがんこ★",
+    "power": 2832.2,
+    "season": 16
+  },
+  {
+    "weapon": "キャンピングシェルター",
+    "name": "ミカヅキ・ハイウェイ",
+    "power": 2831.6,
     "season": 16
   },
   {
@@ -43248,15 +43290,15 @@
     "season": 16
   },
   {
-    "weapon": "ボトルガイザー",
-    "name": "qkaf:",
-    "power": 2829.1,
+    "weapon": "フルイドⅤ",
+    "name": "おこらない '  '",
+    "power": 2830.3,
     "season": 16
   },
   {
-    "weapon": "ドライブワイパー",
-    "name": "ねえれなくん、じつは",
-    "power": 2828.9,
+    "weapon": "ガエンFF",
+    "name": "OreerO",
+    "power": 2827.9,
     "season": 16
   },
   {
@@ -43284,12 +43326,6 @@
     "season": 16
   },
   {
-    "weapon": ".96ガロン",
-    "name": "KY_くんくん",
-    "power": 2826.4,
-    "season": 16
-  },
-  {
     "weapon": "イグザミナー",
     "name": "スティルゲート",
     "power": 2826,
@@ -43299,6 +43335,30 @@
     "weapon": "R-PEN/5H",
     "name": "ももドラグーン",
     "power": 2824.8,
+    "season": 16
+  },
+  {
+    "weapon": "ボールドマーカー",
+    "name": "963",
+    "power": 2824.5,
+    "season": 16
+  },
+  {
+    "weapon": ".96ガロン",
+    "name": "Burstie",
+    "power": 2823.9,
+    "season": 16
+  },
+  {
+    "weapon": "デュアルスイーパー",
+    "name": "り",
+    "power": 2823.5,
+    "season": 16
+  },
+  {
+    "weapon": "キャンピングシェルター",
+    "name": "MT～～",
+    "power": 2823.5,
     "season": 16
   },
   {
@@ -43338,6 +43398,12 @@
     "season": 16
   },
   {
+    "weapon": ".52ガロン",
+    "name": "り",
+    "power": 2820,
+    "season": 16
+  },
+  {
     "weapon": "スパッタリー",
     "name": "えがおスプラトゥーン",
     "power": 2819.9,
@@ -43374,15 +43440,15 @@
     "season": 16
   },
   {
-    "weapon": ".96ガロン",
-    "name": "かてなかったね。",
-    "power": 2816.7,
-    "season": 16
-  },
-  {
     "weapon": "スプラローラー",
     "name": "Charizard",
     "power": 2816.6,
+    "season": 16
+  },
+  {
+    "weapon": "デンタルワイパーミント",
+    "name": "zin",
+    "power": 2815.7,
     "season": 16
   },
   {
@@ -43392,21 +43458,39 @@
     "season": 16
   },
   {
+    "weapon": "カーボンローラーデコ",
+    "name": "チャイン♪",
+    "power": 2815,
+    "season": 16
+  },
+  {
+    "weapon": "シャープマーカー",
+    "name": "きみときえたあのなつ",
+    "power": 2814.6,
+    "season": 16
+  },
+  {
+    "weapon": "スパッタリー・ヒュー",
+    "name": "カサビアン",
+    "power": 2814,
+    "season": 16
+  },
+  {
     "weapon": ".52ガロン",
     "name": "GCSH3624",
     "power": 2813.9,
     "season": 16
   },
   {
-    "weapon": "バレルスピナー",
-    "name": "しゃふのブタやろう",
-    "power": 2813.1,
+    "weapon": "N-ZAP85",
+    "name": "カヌチャン",
+    "power": 2813.4,
     "season": 16
   },
   {
-    "weapon": "ボールドマーカー",
-    "name": "BLTサンド",
-    "power": 2812.9,
+    "weapon": "バレルスピナー",
+    "name": "しゃふのブタやろう",
+    "power": 2813.1,
     "season": 16
   },
   {
@@ -43419,12 +43503,6 @@
     "weapon": "スプラシューター",
     "name": "Elma",
     "power": 2810.9,
-    "season": 16
-  },
-  {
-    "weapon": "デンタルワイパーミント",
-    "name": "たのしくプレイしたい",
-    "power": 2809.2,
     "season": 16
   },
   {
@@ -43452,33 +43530,9 @@
     "season": 16
   },
   {
-    "weapon": "スプラローラー",
-    "name": "もちょちょ",
-    "power": 2806.8,
-    "season": 16
-  },
-  {
     "weapon": "スプラスコープ",
     "name": "もちょちょすこーぷ",
     "power": 2806.3,
-    "season": 16
-  },
-  {
-    "weapon": "ホットブラスターカスタム",
-    "name": "やみおちがんこ★",
-    "power": 2805.9,
-    "season": 16
-  },
-  {
-    "weapon": "24式張替傘・甲",
-    "name": "もこまるん",
-    "power": 2805,
-    "season": 16
-  },
-  {
-    "weapon": "スパッタリー",
-    "name": "ゆづゆづすぱったり～",
-    "power": 2804.1,
     "season": 16
   },
   {
@@ -43524,27 +43578,9 @@
     "season": 16
   },
   {
-    "weapon": "ダイナモローラー",
-    "name": "セイコマート★",
-    "power": 2799.9,
-    "season": 16
-  },
-  {
     "weapon": "フィンセント",
     "name": "SlimShady",
     "power": 2799.5,
-    "season": 16
-  },
-  {
-    "weapon": "デンタルワイパーミント",
-    "name": "みそきん　エビフライ",
-    "power": 2798.7,
-    "season": 16
-  },
-  {
-    "weapon": "N-ZAP85",
-    "name": "カヌチャン",
-    "power": 2798.4,
     "season": 16
   },
   {
@@ -43572,21 +43608,15 @@
     "season": 16
   },
   {
+    "weapon": "カーボンローラーデコ",
+    "name": "かえで",
+    "power": 2794.3,
+    "season": 16
+  },
+  {
     "weapon": "スプラシューター",
     "name": "ねっぴ200のうひん",
     "power": 2794,
-    "season": 16
-  },
-  {
-    "weapon": ".96ガロン",
-    "name": "Burstie",
-    "power": 2793.9,
-    "season": 16
-  },
-  {
-    "weapon": "デュアルスイーパー",
-    "name": "り",
-    "power": 2793.5,
     "season": 16
   },
   {
@@ -43650,20 +43680,14 @@
     "season": 16
   },
   {
-    "weapon": "プライムシューター",
-    "name": "Arily",
-    "power": 2791.7,
+    "weapon": "フルイドⅤ",
+    "name": "ガチホコ",
+    "power": 2791.6,
     "season": 16
   },
   {
     "weapon": "4Kスコープ",
     "name": "モンチッチちゃん",
-    "power": 2791.4,
-    "season": 16
-  },
-  {
-    "weapon": "ボールドマーカー",
-    "name": "963",
     "power": 2791.4,
     "season": 16
   },
@@ -43674,14 +43698,14 @@
     "season": 16
   },
   {
-    "weapon": "スパッタリー・ヒュー",
-    "name": "ゆめときぼう",
-    "power": 2790,
+    "weapon": "ボールドマーカーネオ",
+    "name": "☆ピカチュイミー☆",
+    "power": 2790.4,
     "season": 16
   },
   {
-    "weapon": ".52ガロン",
-    "name": "り",
+    "weapon": "スパッタリー・ヒュー",
+    "name": "ゆめときぼう",
     "power": 2790,
     "season": 16
   },
@@ -43710,21 +43734,21 @@
     "season": 16
   },
   {
+    "weapon": ".96ガロン",
+    "name": "かてなかったね。",
+    "power": 2788,
+    "season": 16
+  },
+  {
     "weapon": ".52ガロン",
     "name": "NS_サモラン",
     "power": 2787.7,
     "season": 16
   },
   {
-    "weapon": "ジェットスイーパーCOBR",
-    "name": "デスサイズヘルEW",
-    "power": 2787.5,
-    "season": 16
-  },
-  {
-    "weapon": "キャンピングシェルター",
-    "name": "ミカヅキ・ハイウェイ",
-    "power": 2786.6,
+    "weapon": "ジムワイパー",
+    "name": "s2",
+    "power": 2787.4,
     "season": 16
   },
   {
@@ -43788,27 +43812,27 @@
     "season": 16
   },
   {
-    "weapon": "スパッタリー・ヒュー",
-    "name": "えびな",
-    "power": 2781.4,
-    "season": 16
-  },
-  {
     "weapon": ".96ガロン",
     "name": "アルビレオ",
     "power": 2781.1,
     "season": 16
   },
   {
-    "weapon": "ドライブワイパー",
-    "name": "　めいなの",
-    "power": 2778.2,
+    "weapon": "エクスプロッシャーカスタム",
+    "name": "いくらどんっ！！",
+    "power": 2780.2,
     "season": 16
   },
   {
-    "weapon": "N-ZAP85",
-    "name": "エンジェルのおてて",
-    "power": 2778,
+    "weapon": "スプラシューターコラボ",
+    "name": "やさしいからあてない",
+    "power": 2779.5,
+    "season": 16
+  },
+  {
+    "weapon": "ドライブワイパー",
+    "name": "　めいなの",
+    "power": 2778.2,
     "season": 16
   },
   {
@@ -43848,12 +43872,6 @@
     "season": 16
   },
   {
-    "weapon": ".96ガロン",
-    "name": "ZETA モルボウ",
-    "power": 2774.7,
-    "season": 16
-  },
-  {
     "weapon": "スパッタリー",
     "name": "RD3154",
     "power": 2774.5,
@@ -43890,18 +43908,6 @@
     "season": 16
   },
   {
-    "weapon": "ガエンFF",
-    "name": "OreerO",
-    "power": 2772.6,
-    "season": 16
-  },
-  {
-    "weapon": "スプラローラー",
-    "name": "ドラグブラッカー",
-    "power": 2772.4,
-    "season": 16
-  },
-  {
     "weapon": "ホットブラスター",
     "name": "ごはんとぎゅうにく",
     "power": 2771.4,
@@ -43911,12 +43917,6 @@
     "weapon": "バレルスピナー",
     "name": "ultima",
     "power": 2771.3,
-    "season": 16
-  },
-  {
-    "weapon": "シャープマーカー",
-    "name": "きみときえたあのなつ",
-    "power": 2771.2,
     "season": 16
   },
   {
@@ -43938,6 +43938,12 @@
     "season": 16
   },
   {
+    "weapon": "スプラシューター",
+    "name": "ながのめい",
+    "power": 2770.7,
+    "season": 16
+  },
+  {
     "weapon": "N-ZAP85",
     "name": "アリス・ツーベルク",
     "power": 2770.5,
@@ -43947,6 +43953,12 @@
     "weapon": "ジェットスイーパー",
     "name": "あ　お　♪",
     "power": 2770,
+    "season": 16
+  },
+  {
+    "weapon": ".52ガロン",
+    "name": "∞こうた∞チワワ",
+    "power": 2769.3,
     "season": 16
   },
   {
@@ -43980,6 +43992,18 @@
     "season": 16
   },
   {
+    "weapon": "N-ZAP85",
+    "name": "やすらか",
+    "power": 2767.2,
+    "season": 16
+  },
+  {
+    "weapon": "トライストリンガー燈",
+    "name": "バレルスピナー",
+    "power": 2767,
+    "season": 16
+  },
+  {
     "weapon": "ダイナモローラー",
     "name": "ミソ",
     "power": 2766.7,
@@ -43998,9 +44022,9 @@
     "season": 16
   },
   {
-    "weapon": "クアッドホッパーブラック",
-    "name": "ニンゲン",
-    "power": 2766.2,
+    "weapon": ".96ガロン",
+    "name": "GTTQでぃっとぴあ",
+    "power": 2765.7,
     "season": 16
   },
   {
@@ -44028,18 +44052,6 @@
     "season": 16
   },
   {
-    "weapon": "スパッタリー・ヒュー",
-    "name": "カサビアン",
-    "power": 2764.6,
-    "season": 16
-  },
-  {
-    "weapon": ".52ガロン",
-    "name": "こなまん",
-    "power": 2764.2,
-    "season": 16
-  },
-  {
     "weapon": "スプラローラー",
     "name": "じこうのだつぜい",
     "power": 2763.9,
@@ -44058,6 +44070,12 @@
     "season": 16
   },
   {
+    "weapon": "N-ZAP85",
+    "name": "エンジェルのおてて",
+    "power": 2763,
+    "season": 16
+  },
+  {
     "weapon": "スプラマニューバーコラボ",
     "name": "ぐーぐー★わさびーふ",
     "power": 2762.9,
@@ -44070,15 +44088,9 @@
     "season": 16
   },
   {
-    "weapon": "スプラマニューバー",
-    "name": "ikura",
-    "power": 2762.8,
-    "season": 16
-  },
-  {
-    "weapon": "フィンセント・ヒュー",
-    "name": "をるふ",
-    "power": 2761.8,
+    "weapon": "リッター4Kカスタム",
+    "name": "s",
+    "power": 2762.5,
     "season": 16
   },
   {
@@ -44088,9 +44100,27 @@
     "season": 16
   },
   {
+    "weapon": "ジムワイパー",
+    "name": "RFW†Shipal",
+    "power": 2761.7,
+    "season": 16
+  },
+  {
+    "weapon": "スプラマニューバーコラボ",
+    "name": "はいよー",
+    "power": 2761.6,
+    "season": 16
+  },
+  {
     "weapon": "オーダースロッシャーレプリカ",
     "name": "ほたる",
     "power": 2761.3,
+    "season": 16
+  },
+  {
+    "weapon": "デンタルワイパーミント",
+    "name": "ちとびと",
+    "power": 2760.4,
     "season": 16
   },
   {
@@ -44100,8 +44130,20 @@
     "season": 16
   },
   {
+    "weapon": "ノヴァブラスター",
+    "name": "※にくにくをたべろ",
+    "power": 2759.2,
+    "season": 16
+  },
+  {
     "weapon": "スパッタリー",
     "name": "まるお",
+    "power": 2759.1,
+    "season": 16
+  },
+  {
+    "weapon": "スパッタリー",
+    "name": "ゆづゆづすぱったり～",
     "power": 2759.1,
     "season": 16
   },
@@ -44109,6 +44151,12 @@
     "weapon": "N-ZAP85",
     "name": "てんねんELげんせん",
     "power": 2758.9,
+    "season": 16
+  },
+  {
+    "weapon": "スプラローラー",
+    "name": "ながしたかずなり",
+    "power": 2758.5,
     "season": 16
   },
   {
@@ -44124,9 +44172,9 @@
     "season": 16
   },
   {
-    "weapon": "N-ZAP85",
-    "name": "オなっちゃん",
-    "power": 2757.5,
+    "weapon": ".52ガロン",
+    "name": "こなまん",
+    "power": 2757.2,
     "season": 16
   },
   {
@@ -44148,12 +44196,6 @@
     "season": 16
   },
   {
-    "weapon": "カーボンローラーデコ",
-    "name": "こーる",
-    "power": 2756,
-    "season": 16
-  },
-  {
     "weapon": "ダイナモローラー",
     "name": "ぽてと",
     "power": 2755.7,
@@ -44163,12 +44205,6 @@
     "weapon": ".52ガロン",
     "name": "タコ",
     "power": 2755.5,
-    "season": 16
-  },
-  {
-    "weapon": ".96ガロン",
-    "name": "『ここがすごい！』",
-    "power": 2754.8,
     "season": 16
   },
   {
@@ -44190,14 +44226,20 @@
     "season": 16
   },
   {
-    "weapon": "スプラチャージャー",
-    "name": "SNAKEMAN",
-    "power": 2754.4,
+    "weapon": "N-ZAP85",
+    "name": "ヒンメルならそうした",
+    "power": 2754.5,
     "season": 16
   },
   {
     "weapon": "スプラローラー",
     "name": "Player",
+    "power": 2754.3,
+    "season": 16
+  },
+  {
+    "weapon": "バケットスロッシャー",
+    "name": "なあく",
     "power": 2754.3,
     "season": 16
   },
@@ -44208,15 +44250,21 @@
     "season": 16
   },
   {
+    "weapon": "デンタルワイパーミント",
+    "name": "みそきん　エビフライ",
+    "power": 2753.7,
+    "season": 16
+  },
+  {
     "weapon": "スパッタリー",
     "name": "りんごもぎれビーム！",
     "power": 2753.3,
     "season": 16
   },
   {
-    "weapon": "ケルビン525",
-    "name": "BREAKER",
-    "power": 2753.3,
+    "weapon": "Rブラスターエリートデコ",
+    "name": "AimforApex",
+    "power": 2752.9,
     "season": 16
   },
   {
@@ -44226,8 +44274,26 @@
     "season": 16
   },
   {
+    "weapon": "フルイドⅤ",
+    "name": "Ui",
+    "power": 2752.3,
+    "season": 16
+  },
+  {
+    "weapon": "クアッドホッパーホワイト",
+    "name": "ぴーまん。",
+    "power": 2752.1,
+    "season": 16
+  },
+  {
     "weapon": "スパッタリー",
     "name": "キぞく_ち、らし",
+    "power": 2751.9,
+    "season": 16
+  },
+  {
+    "weapon": ".52ガロン",
+    "name": "GLOOMY",
     "power": 2751.9,
     "season": 16
   },
@@ -44247,12 +44313,6 @@
     "weapon": "クアッドホッパーブラック",
     "name": "にのせ",
     "power": 2751.2,
-    "season": 16
-  },
-  {
-    "weapon": "カーボンローラーデコ",
-    "name": "チャイン♪",
-    "power": 2750.5,
     "season": 16
   },
   {
@@ -44286,9 +44346,21 @@
     "season": 16
   },
   {
+    "weapon": "ノーチラス47",
+    "name": "みず",
+    "power": 2748,
+    "season": 16
+  },
+  {
     "weapon": "シャープマーカー",
     "name": ":)",
     "power": 2747.8,
+    "season": 16
+  },
+  {
+    "weapon": "N-ZAP85",
+    "name": "といといとうぉうぉ",
+    "power": 2747.4,
     "season": 16
   },
   {
@@ -44298,9 +44370,9 @@
     "season": 16
   },
   {
-    "weapon": "ボトルガイザー",
-    "name": "ひなたん",
-    "power": 2746.8,
+    "weapon": "プライムシューター",
+    "name": "Arily",
+    "power": 2746.7,
     "season": 16
   },
   {
@@ -44334,6 +44406,12 @@
     "season": 16
   },
   {
+    "weapon": "プライムシューターコラボ",
+    "name": "ロア",
+    "power": 2745.6,
+    "season": 16
+  },
+  {
     "weapon": "リッター4Kカスタム",
     "name": "GCSH3840",
     "power": 2745.1,
@@ -44358,12 +44436,6 @@
     "season": 16
   },
   {
-    "weapon": "N-ZAP85",
-    "name": "じーぴー",
-    "power": 2743.9,
-    "season": 16
-  },
-  {
     "weapon": "ジムワイパー",
     "name": "†Nareturn†",
     "power": 2743.8,
@@ -44376,15 +44448,21 @@
     "season": 16
   },
   {
+    "weapon": "パブロ・ヒュー",
+    "name": "yaniu",
+    "power": 2743.5,
+    "season": 16
+  },
+  {
     "weapon": "Rブラスターエリートデコ",
     "name": "17",
     "power": 2743.2,
     "season": 16
   },
   {
-    "weapon": ".52ガロン",
-    "name": "どこでもドア",
-    "power": 2742.2,
+    "weapon": "クアッドホッパーブラック",
+    "name": "そそにさくつきこばな",
+    "power": 2741.4,
     "season": 16
   },
   {
@@ -44430,9 +44508,9 @@
     "season": 16
   },
   {
-    "weapon": "ジムワイパー",
-    "name": "RFW†Shipal",
-    "power": 2739,
+    "weapon": "ヒッセン",
+    "name": "グザヴィエ",
+    "power": 2738.9,
     "season": 16
   },
   {
@@ -44442,21 +44520,15 @@
     "season": 16
   },
   {
-    "weapon": "ヒッセン・ヒュー",
-    "name": "どぶヒッセンようつべ",
-    "power": 2738.6,
-    "season": 16
-  },
-  {
     "weapon": "スパッタリー・ヒュー",
     "name": "IPPEI☆",
     "power": 2738.3,
     "season": 16
   },
   {
-    "weapon": "ヒッセンASH",
-    "name": "a",
-    "power": 2737.1,
+    "weapon": "スプラマニューバー",
+    "name": "ikura",
+    "power": 2737.9,
     "season": 16
   },
   {
@@ -44472,12 +44544,6 @@
     "season": 16
   },
   {
-    "weapon": ".96ガロン",
-    "name": "Reply",
-    "power": 2736.7,
-    "season": 16
-  },
-  {
     "weapon": "ダイナモローラー",
     "name": "katsu",
     "power": 2736.6,
@@ -44490,21 +44556,9 @@
     "season": 16
   },
   {
-    "weapon": "フルイドⅤ",
-    "name": "ブルーノどうくつ",
-    "power": 2736.3,
-    "season": 16
-  },
-  {
     "weapon": "デュアルスイーパー",
     "name": "ちょっとサラダ",
     "power": 2736,
-    "season": 16
-  },
-  {
-    "weapon": "スパッタリー",
-    "name": "†ちーずふぉんでゅ†",
-    "power": 2735.8,
     "season": 16
   },
   {
@@ -44514,15 +44568,15 @@
     "season": 16
   },
   {
-    "weapon": "シャープマーカー",
-    "name": "あぶないキネ",
-    "power": 2735.4,
+    "weapon": "ホットブラスターカスタム",
+    "name": "えびフライ<←>",
+    "power": 2735.6,
     "season": 16
   },
   {
-    "weapon": "ノーチラス47",
-    "name": "みず",
-    "power": 2735.3,
+    "weapon": "シャープマーカー",
+    "name": "あぶないキネ",
+    "power": 2735.4,
     "season": 16
   },
   {
@@ -44568,14 +44622,26 @@
     "season": 16
   },
   {
-    "weapon": "リッター4Kカスタム",
-    "name": "s",
-    "power": 2732.5,
+    "weapon": "モップリンD",
+    "name": "モップリンD",
+    "power": 2732.9,
+    "season": 16
+  },
+  {
+    "weapon": "バケットスロッシャー",
+    "name": "てきせいうんめいろん",
+    "power": 2732.1,
     "season": 16
   },
   {
     "weapon": "ドライブワイパー",
     "name": "のりしおファンボーイ",
+    "power": 2731.8,
+    "season": 16
+  },
+  {
+    "weapon": "フィンセント・ヒュー",
+    "name": "をるふ",
     "power": 2731.8,
     "season": 16
   },
@@ -44598,8 +44664,8 @@
     "season": 16
   },
   {
-    "weapon": "ボールドマーカー",
-    "name": "せかいいちのおんな",
+    "weapon": ".52ガロン",
+    "name": "ふがふが☆せなちゃん",
     "power": 2731.2,
     "season": 16
   },
@@ -44652,6 +44718,18 @@
     "season": 16
   },
   {
+    "weapon": ".96ガロン",
+    "name": "ZETA モルボウ",
+    "power": 2729.7,
+    "season": 16
+  },
+  {
+    "weapon": "パブロ・ヒュー",
+    "name": "ば",
+    "power": 2729.6,
+    "season": 16
+  },
+  {
     "weapon": ".52ガロン",
     "name": "wiper/ドンキー",
     "power": 2729.4,
@@ -44682,9 +44760,21 @@
     "season": 16
   },
   {
+    "weapon": ".52ガロン",
+    "name": "なゆち",
+    "power": 2728,
+    "season": 16
+  },
+  {
     "weapon": "バケットスロッシャー",
     "name": "ぺんぎん_ほたか",
     "power": 2727.8,
+    "season": 16
+  },
+  {
+    "weapon": "スパッタリー・ヒュー",
+    "name": "えびな",
+    "power": 2727.7,
     "season": 16
   },
   {
@@ -44712,12 +44802,6 @@
     "season": 16
   },
   {
-    "weapon": "クアッドホッパーブラック",
-    "name": "そそにさくつきこばな",
-    "power": 2726.4,
-    "season": 16
-  },
-  {
     "weapon": "モップリンD",
     "name": "フユニャン",
     "power": 2726.4,
@@ -44726,6 +44810,12 @@
   {
     "weapon": "オーダースピナーレプリカ",
     "name": "ハニーゆきだるま",
+    "power": 2726.2,
+    "season": 16
+  },
+  {
+    "weapon": "N-ZAP85",
+    "name": "Lunello",
     "power": 2726.2,
     "season": 16
   },
@@ -44748,12 +44838,6 @@
     "season": 16
   },
   {
-    "weapon": "フルイドⅤ",
-    "name": "おこらない '  '",
-    "power": 2724.9,
-    "season": 16
-  },
-  {
     "weapon": ".52ガロン",
     "name": "YRB",
     "power": 2724.8,
@@ -44763,12 +44847,6 @@
     "weapon": "カーボンローラーデコ",
     "name": "アフローン",
     "power": 2724.4,
-    "season": 16
-  },
-  {
-    "weapon": ".96ガロン",
-    "name": "GTTQでぃっとぴあ",
-    "power": 2724.2,
     "season": 16
   },
   {
@@ -44796,9 +44874,15 @@
     "season": 16
   },
   {
-    "weapon": "トライストリンガー燈",
-    "name": "one room",
+    "weapon": "ヒッセン・ヒュー",
+    "name": "どぶヒッセンようつべ",
     "power": 2723.6,
+    "season": 16
+  },
+  {
+    "weapon": "Rブラスターエリートデコ",
+    "name": "Sleepwalk",
+    "power": 2723.5,
     "season": 16
   },
   {
@@ -44826,30 +44910,6 @@
     "season": 16
   },
   {
-    "weapon": "ヒッセン",
-    "name": "グザヴィエ",
-    "power": 2723,
-    "season": 16
-  },
-  {
-    "weapon": "プロモデラーMG",
-    "name": "やまなかひんじゃくん",
-    "power": 2722.9,
-    "season": 16
-  },
-  {
-    "weapon": "Rブラスターエリートデコ",
-    "name": "AimforApex",
-    "power": 2722.9,
-    "season": 16
-  },
-  {
-    "weapon": ".52ガロン",
-    "name": "mimi",
-    "power": 2722.6,
-    "season": 16
-  },
-  {
     "weapon": "オーダーシューターレプリカ",
     "name": "Summertime",
     "power": 2722.4,
@@ -44862,21 +44922,15 @@
     "season": 16
   },
   {
-    "weapon": "エクスプロッシャーカスタム",
-    "name": "いくらどんっ！！",
-    "power": 2722.1,
-    "season": 16
-  },
-  {
     "weapon": "ワイドローラー",
     "name": "ほ",
     "power": 2721.6,
     "season": 16
   },
   {
-    "weapon": "ドライブワイパー",
-    "name": "awkward",
-    "power": 2721.1,
+    "weapon": "スパッタリー",
+    "name": "†ちーずふぉんでゅ†",
+    "power": 2721.4,
     "season": 16
   },
   {
@@ -44898,9 +44952,9 @@
     "season": 16
   },
   {
-    "weapon": "プライムシューターコラボ",
-    "name": "ごぜんのこ～ちゃ♪",
-    "power": 2719.5,
+    "weapon": "N-ZAP85",
+    "name": "あっしゅっしゅ～～",
+    "power": 2719.6,
     "season": 16
   },
   {
@@ -44943,60 +44997,6 @@
     "weapon": "スパッタリー・ヒュー",
     "name": "あぽ",
     "power": 2718,
-    "season": 16
-  },
-  {
-    "weapon": "バレルスピナー",
-    "name": "あかた",
-    "power": 2717.9,
-    "season": 16
-  },
-  {
-    "weapon": "モップリンD",
-    "name": "モップリンD",
-    "power": 2717.9,
-    "season": 16
-  },
-  {
-    "weapon": "スプラシューター",
-    "name": "Ù Boopy",
-    "power": 2717.4,
-    "season": 16
-  },
-  {
-    "weapon": "ダイナモローラー",
-    "name": "ディアラ",
-    "power": 2717.3,
-    "season": 16
-  },
-  {
-    "weapon": ".52ガロン",
-    "name": "rrr",
-    "power": 2717.2,
-    "season": 16
-  },
-  {
-    "weapon": "スクリュースロッシャーネオ",
-    "name": "いもけんぴちゃんねる",
-    "power": 2717,
-    "season": 16
-  },
-  {
-    "weapon": "N-ZAP85",
-    "name": "といといとうぉうぉ",
-    "power": 2717,
-    "season": 16
-  },
-  {
-    "weapon": "ジムワイパー",
-    "name": "s2",
-    "power": 2716.9,
-    "season": 16
-  },
-  {
-    "weapon": "ドライブワイパー",
-    "name": "はるちゃ",
-    "power": 2716.8,
     "season": 16
   }
 ]
