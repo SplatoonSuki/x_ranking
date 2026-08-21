@@ -184,7 +184,8 @@
     "Hoofz Dualie Squelchers": "デュアルスイーパー蹄",
     "Patternz Undercover Brella": "スパイガジェット繚",
     "Bulbz Tri-Stringer": "トライストリンガー燈",
-    "Stickerz Splatana Stamper": "ジムワイパー封"
+    "Stickerz Splatana Stamper": "ジムワイパー封",
+    "Plastic-Bottle Shot Replica": "PETシューターレプリカ"
   };
   const eria = eria_new.data.node.xRankingAr.edges.map(edge => {
     return {
