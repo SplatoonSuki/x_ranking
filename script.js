@@ -629,9 +629,9 @@ function createList(w) {
     const icons = [];
     let wp;
     if (w == "set") wp = weapons.slice(0, 160)
-    else if (w == "main") wp = weapons.slice(206, 271)
-    else if (w == "sub") wp = weapons.slice(173, 187)
-    else if (w == "special") wp = weapons.slice(187, 206);
+    else if (w == "main") wp = weapons.slice(207, 272)
+    else if (w == "sub") wp = weapons.slice(174, 188)
+    else if (w == "special") wp = weapons.slice(188, 207);
     wp.forEach((w) => {
       icons.push(`${normalizeUrl(w)}.png`);
     });
@@ -808,28 +808,28 @@ async function applyFilter_() {
       opt["merge"] = true;
       wp = weapons.slice(0, 160);
     } else {
-      wp = weapons.slice(0, 173);
+      wp = weapons.slice(0, 174);
     }
   } else if (weapon == "w_main") {
     opt["merge"] = true;
     opt["main"] = true;
-    wp = weapons.slice(206, 271);
+    wp = weapons.slice(207, 272);
   } else if (weapon == "w_cate") {
     opt["merge"] = true;
     opt["category"] = true;
-    wp = weapons.slice(271, 282);
+    wp = weapons.slice(272, 283);
   } else if (weapon == "w_rang") {
     opt["merge"] = true;
     opt["range"] = true;
-    wp = weapons.slice(282, 287);
+    wp = weapons.slice(283, 288);
   } else if (weapon == "sub") {
     opt["merge"] = true;
     opt["sub"] = true;
-    wp = weapons.slice(173, 187);
+    wp = weapons.slice(174, 188);
   } else if (weapon == "special") {
     opt["merge"] = true;
     opt["special"] = true;
-    wp = weapons.slice(187, 206);
+    wp = weapons.slice(188, 207);
   }
   const eria = countByWeapon(eriadata, season, opt);
   const yagura = countByWeapon(yaguradata, season, opt);
@@ -1599,7 +1599,7 @@ input.addEventListener("input", () => {
 
   if (value === "") return;
 
-  let wp = weapons.slice(0, 173);
+  let wp = weapons.slice(0, 174);
   // 部分一致でフィルタ
   const filtered = wp.filter(w =>
     w.includes(value)
