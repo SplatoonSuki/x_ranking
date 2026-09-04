@@ -1,4 +1,4 @@
-const CurrentSeason = 16
+const CurrentSeason = 17
 
 const isMobile = (window.innerWidth <= 768) ? true : false;
 
@@ -75,7 +75,8 @@ function getSeason(num) {
     13: "2025秋",
     14: "2025冬",
     15: "2026春",
-    16: "2026夏"
+    16: "2026夏",
+    17: "2026秋"
   };
 
   return seasons[num] || "不明";
