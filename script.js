@@ -441,7 +441,7 @@ function lineChart(b) {
   container.style.height = "";
   container2.style.height = 0;
   const labels = ["2022冬", "2023春", "2023夏", "2023秋", "2023冬", "2024春", "2024夏", 
-    "2024秋", "2024冬", "2025春", "2025夏", "2025秋", "2025冬", "2026春", "2026夏"]
+    "2024秋", "2024冬", "2025春", "2025夏", "2025秋", "2025冬", "2026春", "2026夏", "2026秋"]
   const title = b ? "人数" : "割合"
   const ctx = document.getElementById('mainChart2');
   const rows = document.querySelectorAll("#analysisTable tbody tr");
