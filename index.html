@@ -7,321 +7,109 @@
   <title>スプラ3 Xランキング統計</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/Xマッチ.ico">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels" defer></script>
-  <script src="script.js" defer></script>
+  <script type="module" src="main.js" defer></script>
 </head>
 <body>
-  <header>
-    <button onclick="showPage('ranking')">Xランキング</button>
-    <button onclick="showPage('statistics')" class="active-btn">統計</button>
-    <button onclick="showPage('analysis')">ウェポン別分析</button>
-  </header>
-  <div class="content">
-    <div id="ranking" class="page">
-      <p class="note">オーダー系統など完全に性能が同一のブキも異なるものとして扱っています。</p>
-      <div class="filter-box">
-        <!-- シーズン -->
-        <div class="filter-group">
-          <label>シーズン</label>
-          <select id="season">
-            <option value="all">すべて</option>
-            <option value="2">2022冬（2022/12/01~2023/03/01）</option>
-            <option value="3">2023春（2023/03/01~2023/06/01）</option>
-            <option value="4">2023夏（2023/06/01~2023/09/01）</option>
-            <option value="5">2023秋（2023/09/01~2023/12/01）</option>
-            <option value="6">2023冬（2023/12/01~2024/03/01）</option>
-            <option value="7">2024春（2024/03/01~2024/06/01）</option>
-            <option value="8">2024夏（2024/06/01~2024/09/01）</option>
-            <option value="9">2024秋（2024/09/01~2024/12/01）</option>
-            <option value="10">2024冬（2024/12/01~2025/03/01）</option>
-            <option value="11">2025春（2025/03/01~2025/06/01）</option>
-            <option value="12">2025夏（2025/06/01~2025/09/01）</option>
-            <option value="13">2025秋（2025/09/01~2025/12/01）</option>
-            <option value="14">2025冬（2025/12/01~2026/03/01）</option>
-            <option value="15">2026春（2026/03/01~2026/06/01）</option>
-            <option value="16">2026夏（2026/06/01~2026/09/01）</option>
-            <option value="17" selected>2026秋（2026/09/01~）</option>
-          </select>
-        </div>
 
-        <!-- ルール -->
-        <div class="filter-group">
-          <label>ルール</label>
-          <select id="rule">
-            <option value="eria" selected>ガチエリア</option>
-            <option value="yagura">ガチヤグラ</option>
-            <option value="hoko">ガチホコ</option>
-            <option value="asari">ガチアサリ</option>
-          </select>
-        </div>
+<header>
+  <button data-page="ranking">Xランキング</button>
+  <button data-page="usage" class="active-btn">ブキ別使用率</button>
+  <button data-page="history">歴代</button>
+</header>
 
-        <!-- ブキ -->
-        <div class="filter-group">
-          <div class="checkbox-row">
-          <label>ブキ</label>
-            <label class="checkbox-label">
-              <input type="checkbox" id="exactMatch" checked>
-              完全一致検索
-            </label>
-          </div>
-          <input type="text" id="weapon" placeholder="例: スプラシューター / 全てなら空欄" autocomplete="off">
-          <ul id="suggestions"></ul>
-        </div>
-
-        <!-- 名前 -->
-        <div class="filter-group">
-          <label>名前</label>
-          <input type="text" id="name" placeholder="全てなら空欄" autocomplete="off">
-        </div>
-
-        <!-- ボタン -->
-        <button class="filter-button" onclick="applyFilter()">結果を表示</button>
-
-      </div>
-      <div class="table-container">
-        <table id="rankingTable">
-        <colgroup>
-          <col style="width: 8%">
-          <col style="width: 10%">
-          <col style="width: 30%">
-          <col style="width: 40%">
-          <col style="width: 12%">
-        </colgroup>
-          <thead>
-            <tr>
-              <th class="center">順位</th>
-              <th class="center">パワー</th>
-              <th>名前</th>
-              <th>ブキ</th>
-              <th class="center">シーズン</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
+<main>
+<div id="ranking" class="view">
+  <div class="view-head">
+    <div>
+      <div class="view-title">Xランキング</div>
+      <div class="view-desc">各ルールの上位500名を表示します。</div>
     </div>
-    <div id="statistics" class="page active">
-      <div class="filter-box">
-        
-        <!-- シーズン -->
-        <div class="filter-group">
-          <label>シーズン</label>
-          <select id="season_">
-            <option value="all">すべて</option>
-            <option value="2">2022冬（2022/12/01~2023/03/01）</option>
-            <option value="3">2023春（2023/03/01~2023/06/01）</option>
-            <option value="4">2023夏（2023/06/01~2023/09/01）</option>
-            <option value="5">2023秋（2023/09/01~2023/12/01）</option>
-            <option value="6">2023冬（2023/12/01~2024/03/01）</option>
-            <option value="7">2024春（2024/03/01~2024/06/01）</option>
-            <option value="8">2024夏（2024/06/01~2024/09/01）</option>
-            <option value="9">2024秋（2024/09/01~2024/12/01）</option>
-            <option value="10">2024冬（2024/12/01~2025/03/01）</option>
-            <option value="11">2025春（2025/03/01~2025/06/01）</option>
-            <option value="12">2025夏（2025/06/01~2025/09/01）</option>
-            <option value="13">2025秋（2025/09/01~2025/12/01）</option>
-            <option value="14">2025冬（2025/12/01~2026/03/01）</option>
-            <option value="15">2026春（2026/03/01~2026/06/01）</option>
-            <option value="16">2026夏（2026/06/01~2026/09/01）</option>
-            <option value="17" selected>2026秋（2026/09/01~）</option>
-          </select>
-        </div>
-
-        <!-- ウェポン -->
-        <div class="filter-group">
-          <label>ウェポン</label>
-          <select id="weapon_">
-            <option value="w_set" selected>ブキ（セット別）</option>
-            <option value="w_main">ブキ（メイン別）</option>
-            <option value="w_cate">ブキ（カテゴリ別）</option>
-            <option value="w_rang">ブキ（射程別）</option>
-            <option value="sub">サブ</option>
-            <option value="special">スペシャル</option>
-          </select>
-        </div>
-
-        <!-- ソート -->
-        <div class="filter-group">
-          <label>ソート</label>
-          <select id="sort">
-            <option value="エリア">エリア</option>
-            <option value="ヤグラ">ヤグラ</option>
-            <option value="ホコ">ホコ</option>
-            <option value="アサリ">アサリ</option>
-            <option value="合計" selected>全体</option>
-            <option value="増減">増減</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <div class="checkbox-row">
-          <label for="ranking_filter">各ルールの上位</label>
-          <input id="ranking_filter" type="number" min="1" max="500" value="500" placeholder="1~500">
-          <label>人</label>
-          </div>
-        </div>
-
-        <div class="filter-group">
-          <div class="checkbox-row">
-            <label class="checkbox-label">
-              <input type="checkbox" id="merge" checked>
-              性能が同じブキはまとめる
-            </label>
-          </div>
-          <p class="note">オーダー系統など</p>
-          <div class="checkbox-row">
-            <label class="checkbox-label">
-              <input type="checkbox" id="not_percent">
-              人数で表示する
-            </label>
-          </div>
-          <p class="note">デフォルトは割合（%）表示</p>
-          <div class="checkbox-row">
-            <label class="checkbox-label">
-              <input type="checkbox" id="merge_c">
-              チャージャーとスコープはまとめて考える
-            </label>
-          </div>
-          <p class="note">ランキング上での値が合算され、並んで表示されるようになります</p>
-          <p class="note">メイン数について同メインとして扱うようになります</p>
-        </div>
-
-        <!-- ボタン -->
-        <button class="filter-button" onclick="applyFilter_()">結果を表示</button>
-
+    <div class="view-controls">
+      <div class="select-wrap">
+        <select class="season-select" id="ranking-season"></select>
       </div>
-      <div class="table-container">
-        <table id="statsTable">
-          <colgroup>
-            <col style="width: 8%">
-            <col style="width: 32%">
-            <col style="width: 10%">
-            <col style="width: 10%">
-            <col style="width: 10%">
-            <col style="width: 10%">
-            <col style="width: 10%">
-            <col style="width: 10%">
-          </colgroup>
-          <thead>
-            <tr>
-              <th class="center">順位</th>
-              <th>ウェポン</th>
-              <th class="center">エリア</th>
-              <th class="center">ヤグラ</th>
-              <th class="center">ホコ</th>
-              <th class="center">アサリ</th>
-              <th class="center">全体</th>
-              <th class="center">増減</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <div class="graphs">
-        <div id="chart-controls">
-          <button data-mode="total">
-            <img src="assets/Xマッチ.png" class="rule-icon">全体
-          </button>
-          <button data-mode="eria">
-            <img src="assets/ガチエリア.png" class="rule-icon">エリア
-          </button>
-          <button data-mode="yagura">
-            <img src="assets/ガチヤグラ.png" class="rule-icon">ヤグラ
-          </button>
-          <button data-mode="hoko">
-            <img src="assets/ガチホコ.png" class="rule-icon">ホコ
-          </button>
-          <button data-mode="asari">
-            <img src="assets/ガチアサリ.png" class="rule-icon">アサリ
-          </button>
-        </div>
-        <div id="chart-container">
-          <canvas id="mainChart"></canvas>
-        </div>
-      </div>
-    </div>
-    <div id="analysis" class="page">
-      <p class="note">オーダー系統など完全に性能が同一のブキはまとめて扱っています。</p>
-      <div class="filter-box">
-        <!-- シーズン -->
-        <div class="filter-group">
-          <label>シーズン</label>
-          <select id="season__">
-            <option value="seasonal">(推移)</option>
-            <option value="all">すべて</option>
-            <option value="2">2022冬（2022/12/01~2023/03/01）</option>
-            <option value="3">2023春（2023/03/01~2023/06/01）</option>
-            <option value="4">2023夏（2023/06/01~2023/09/01）</option>
-            <option value="5">2023秋（2023/09/01~2023/12/01）</option>
-            <option value="6">2023冬（2023/12/01~2024/03/01）</option>
-            <option value="7">2024春（2024/03/01~2024/06/01）</option>
-            <option value="8">2024夏（2024/06/01~2024/09/01）</option>
-            <option value="9">2024秋（2024/09/01~2024/12/01）</option>
-            <option value="10">2024冬（2024/12/01~2025/03/01）</option>
-            <option value="11">2025春（2025/03/01~2025/06/01）</option>
-            <option value="12">2025夏（2025/06/01~2025/09/01）</option>
-            <option value="13">2025秋（2025/09/01~2025/12/01）</option>
-            <option value="14">2025冬（2025/12/01~2026/03/01）</option>
-            <option value="15">2026春（2026/03/01~2026/06/01）</option>
-            <option value="16">2026夏（2026/06/01~2026/09/01）</option>
-            <option value="17" selected>2026秋（2026/09/01~）</option>
-          </select>
-        </div>
-        <!-- ソート -->
-        <div class="filter-group">
-          <label>ソート</label>
-          <select id="sort_">
-            <option value="エリア">エリア</option>
-            <option value="ヤグラ">ヤグラ</option>
-            <option value="ホコ">ホコ</option>
-            <option value="アサリ">アサリ</option>
-            <option value="合計" selected>全体</option>
-            <option value="増減">増減</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <div class="checkbox-row">
-            <label class="checkbox-label">
-              <input type="checkbox" id="not_percent_">
-              人数で表示する
-            </label>
-          </div>
-          <p class="note">デフォルトは割合（%）表示</p>
-        </div>
-        <div class="filter-group">
-        <label>ウェポン選択</label>
-          <div id="weapon-controls">
-            <button data-mode="set">ブキ</button>
-            <button data-mode="main">メイン</button>
-            <button data-mode="sub">サブ</button>
-            <button data-mode="special">スペシャル</button>
-            <button data-mode="category">カテゴリ</button>
-            <button data-mode="range">射程</button>
-          </div>
-          <div id="buttons-container"></div>
-        </div>
-        <div class="filter-group">
-          <div class="selected">
-            選択中: <span id="choice" class="choices"></span>
-          </div>
-        </div>
-        <!-- ボタン -->
-        <button class="filter-button" onclick="display()">結果を表示</button>
-      </div>
-      <div class="table-container">
-        <table id="analysisTable">
-        </table>
-      </div>
-      <div class="graphs">
-        <div id="chart-container2">
-          <canvas id="mainChart2"></canvas>
-        </div>
-        <div id="chart-container3">
-          <canvas id="mainChart3"></canvas>
-        </div>
+      <span class="season-period" id="ranking-season-period"></span>
+      <div class="rule-tabs" data-target="ranking">
+        <button class="rule-tab active" data-rule="eria">エリア</button>
+        <button class="rule-tab" data-rule="yagura">ヤグラ</button>
+        <button class="rule-tab" data-rule="hoko">ホコ</button>
+        <button class="rule-tab" data-rule="asari">アサリ</button>
       </div>
     </div>
   </div>
+  <div class="filter-row">
+    <input type="text" class="filter-input" id="ranking-filter" placeholder="プレイヤー名・ブキ名で検索">
+  </div>
+  <div class="rank-list" id="rank-list"></div>
+</div>
+<div id="usage" class="view active">
+  <div class="view-head">
+    <div>
+      <div class="view-title">ブキ別使用率</div>
+      <div class="view-desc">王冠2,000名の使用ウェポンを集計します。</div>
+    </div>
+    <div class="view-controls">
+      <div class="select-wrap">
+        <select class="season-select" id="usage-season"></select>
+      </div>
+      <span class="season-period" id="usage-season-period"></span>
+      <div class="dim-tabs" id="usage-dim-tabs">
+        <button class="dim-tab active" data-dim="set">セット</button>
+        <button class="dim-tab" data-dim="main">メイン</button>
+        <button class="dim-tab" data-dim="sub">サブ</button>
+        <button class="dim-tab" data-dim="special">スペシャル</button>
+        <button class="dim-tab" data-dim="category">カテゴリ</button>
+        <button class="dim-tab" data-dim="range">射程</button>
+      </div>
+    </div>
+  </div>
+  <div class="filter-row">
+    <div class="dim-tabs" id="usage-metric-tabs">
+      <button class="dim-tab active" data-metric="pct">割合(%)</button>
+      <button class="dim-tab" data-metric="count">人数</button>
+      <button class="dim-tab" data-metric="hensachi">偏差値</button>
+    </div>
+    <label class="scope-toggle">
+      <input type="checkbox" id="scope-merge-toggle">
+      スコープをチャージャーと同一視する
+    </label>
+  </div>
+  <div class="usage-table-wrap" id="usage-table-wrap"></div>
+</div>
+<div id="history" class="view">
+
+  <div class="history-section">
+    <div class="view-head">
+      <div>
+        <div class="view-title">ブキ別の歴代推移</div>
+        <div class="view-desc">選んだウェポンのシーズンごと使用率の変化を表示します。</div>
+      </div>
+      <div class="view-controls">
+        <div class="dim-tabs" id="history-dim-tabs">
+          <button class="dim-tab active" data-dim="set">セット</button>
+          <button class="dim-tab" data-dim="main">メイン</button>
+          <button class="dim-tab" data-dim="sub">サブ</button>
+          <button class="dim-tab" data-dim="special">スペシャル</button>
+          <button class="dim-tab" data-dim="category">カテゴリ</button>
+          <button class="dim-tab" data-dim="range">射程</button>
+        </div>
+      </div>
+    </div>
+    <div class="filter-row">
+      <div class="select-wrap">
+        <select class="season-select" id="history-weapon-select"></select>
+      </div>
+      <div class="dim-tabs" id="history-metric-tabs">
+        <button class="dim-tab active" data-metric="pct">割合(%)</button>
+        <button class="dim-tab" data-metric="count">人数</button>
+      </div>
+    </div>
+    <div class="history-weapon-heading" id="history-weapon-heading"></div>
+    <div class="usage-table-wrap" id="history-weapon-table-wrap"></div>
+  </div>
+
+</div>
+</main>
+
 </body>
 </html>
