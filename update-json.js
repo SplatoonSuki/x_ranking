@@ -5,10 +5,10 @@
 
   const [eria_new, yagura_new, hoko_new, asari_new
   ] = await Promise.all([
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + str(currentSeason) + '.splatzones.json').then(res => res.json()),
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + str(currentSeason) + '.towercontrol.json').then(res => res.json()),
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + str(currentSeason) + '.rainmaker.json').then(res => res.json()),
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + str(currentSeason) + '.clamblitz.json').then(res => res.json())
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + currentSeason + '.splatzones.json').then(res => res.json()),
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + currentSeason + '.towercontrol.json').then(res => res.json()),
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + currentSeason + '.rainmaker.json').then(res => res.json()),
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + currentSeason + '.clamblitz.json').then(res => res.json())
   ]);
   const weaponNameMap = {
     "Splattershot": "スプラシューター",
@@ -217,8 +217,8 @@
   });
 
   // 書き込み（整形つき）
-  fs.writeFileSync("data/" +  str(currentSeason) + "/eria.json", JSON.stringify(eria, null, 2), "utf-8");
-  fs.writeFileSync("data/" +  str(currentSeason) + "/yagura.json", JSON.stringify(yagura, null, 2), "utf-8");
-  fs.writeFileSync("data/" +  str(currentSeason) + "/hoko.json", JSON.stringify(hoko, null, 2), "utf-8");
-  fs.writeFileSync("data/" +  str(currentSeason) + "/asari.json", JSON.stringify(asari, null, 2), "utf-8");
+  fs.writeFileSync("data/" +  currentSeason + "/eria.json", JSON.stringify(eria, null, 2), "utf-8");
+  fs.writeFileSync("data/" +  currentSeason + "/yagura.json", JSON.stringify(yagura, null, 2), "utf-8");
+  fs.writeFileSync("data/" +  currentSeason + "/hoko.json", JSON.stringify(hoko, null, 2), "utf-8");
+  fs.writeFileSync("data/" +  currentSeason + "/asari.json", JSON.stringify(asari, null, 2), "utf-8");
 })();
