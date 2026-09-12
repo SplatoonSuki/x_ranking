@@ -417,7 +417,7 @@ header button.active-btn {
   .row-weapon{ display: none; }
   .usage-table th, .usage-table td{ padding: 8px 10px; font-size: 12px; }
   .usage-table .label-text{ display: none; }
-  .usage-table td.label{ justify-content: center; }
+  .usage-table td.label{ text-align: center; }
   .usage-table th:nth-child(n+3), .usage-table td:nth-child(n+3){ min-width: 50px; text-align: right; }
   .history-weapon-table th:nth-child(n+2), .history-weapon-table td:nth-child(n+2){ min-width: 50px; text-align: right; }
 }
