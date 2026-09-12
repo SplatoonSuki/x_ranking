@@ -1,463 +1,423 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+  --bg: #292E35; /*111111*/
+  --header-bg: #070707;
+  --line: #41414a;
+  --line-hover: #707080;
+  --panel: #17171c;
+  --panel-alt: #1c1c22;
+  --text: #FEFEFE;
+  --text-mute: #8D8D8D;
+  --x: #22F49D;
+  --eria: #02F2C4;   /* ガチエリア */
+  --yagura: #7A26F8; /* ガチヤグラ */
+  --hoko: #ECD219;   /* ガチホコ */
+  --asari: #DF840E;  /* ガチアサリ */
+
+  --gold: #ffd23f;
+  --silver: #C5C7CC;
+  --copper: #C8753D;
+
+  --rules: #F54708; /*#FF8c00, FEFEFE*/
+  --overall: #22F49D; /*#0096FF*/
+
+  --splat-font1: "SplatFont1", "SplatFont1_", sans-serif;
+  --splat-font2: "SplatFont2", sans-serif;
 }
 
-.content {
-    padding: 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-p {
-    margin: 0 auto 5px;
-    max-width: 800px;
+
+@font-face {
+  font-family: "SplatFont2";
+  src: url("fonts/splatfont2.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-.note {
-  color: #666;        /* 少し薄いグレー */
-  font-size: 0.9em;   /* 少し小さめ */
+
+@font-face {
+  font-family: "SplatFont1";
+  src: url("fonts/splatfont1.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-header { 
-    background: #333;
-    padding: 10px;
+
+@font-face {
+  font-family: "SplatFont1_";
+  src: url("fonts/splatfont1_.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body{
+  background: var(--bg);
+  font-family: sans-serif;
+  color: var(--text);
+}
+
+/* ---------- 共通レイアウト ---------- */
+main{ max-width: 1080px; margin: 0 auto; padding: 40px 24px 100px; }
+.view{ display: none; }
+.view.active{ display: block; }
+
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: var(--header-bg);
 }
 
 header button {
-    color: white;
-    background: #555;          /* 背景つける */
-    border: 1px solid #777;   /* 枠つける */
-    padding: 8px 16px;        /* サイズ感 */
-    margin-right: 10px;
-    cursor: pointer;
-    border-radius: 5px;       /* 角丸 */
+  font-family: var(--splat-font2);
+  cursor: pointer;
+  color: var(--text-mute);
+  border: none;
+  background: none;
+  font-size: 17px;
+  padding: 5px 9px;
+  transition: color 0.2s ease;
 }
 
-/* ホバー時 */
-header button:hover {
-    background: #777;
-}
-
-/* 今選択されてるボタン */
+header button:hover{ color: var(--text); }
 header button.active-btn {
-    background: #00aaff;
-    border-color: #0088cc;
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--x);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
-.page {
-    display: none;
-}
-
-.active {
-    display: block;
-}
-.filter-box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 0 auto 20px;
-    max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.filter-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-select, input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-input#ranking_filter {
-    width: 70px;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-#suggestions {
-  list-style: none;
-  padding: 0;
-  margin: 5px 0 0 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  max-height: 150px;
-  overflow-y: auto;
-  background: white;
-}
-
-#suggestions li {
-  padding: 8px;
-  cursor: pointer;
-}
-
-#suggestions li:hover {
-  background: #eee;
-}
-
-#suggestions_all {
-  list-style: none;
-  padding: 0;
-  margin: 5px 0 0 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  max-height: 150px;
-  overflow-y: auto;
-  background: white;
-}
-
-#suggestions_all li {
-  padding: 8px;
-  cursor: pointer;
-}
-
-#suggestions_all li:hover {
-  background: #eee;
-}
-
-.filter-button{
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: #4CAF50;
-    color: white;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.filter-button:hover {
-    background: #45a049;
-}
-
-.checkbox-row {
+.view-head{
   display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.view-title{
+  font-family: var(--splat-font1);
+  font-size: clamp(28px, 4vw, 40px);
+}
+.view-desc{ color: var(--text-mute); font-size: 14px; margin-top: 6px; }
+
+/* ---------- ルールタブ（フィルタ） ---------- */
+.view-controls{
+  display: flex;
+  align-items: center;
   gap: 10px;
-  align-items: center;
+  flex-wrap: wrap;
 }
-
-.checkbox-row input[type="text"] {
-  flex: 1;
+.select-wrap{ position: relative; display: inline-block; }
+.select-wrap::after{
+  content: '▾';
+  position: absolute;
+  right: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px; /* 9px */
+  color: var(--text-mute);
+  pointer-events: none;
 }
-
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+.season-select{
+  appearance: none; -webkit-appearance: none;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 32px 8px 14px;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+.season-select:focus{ outline: none; border-color: #555; }
+.season-select:hover{ border-color: #444; }
+.season-period{
+  font-size: 12px;
+  color: var(--text-mute);
   white-space: nowrap;
 }
-.table-container {
-  max-height: 1000px;   /* 表の高さ制限 */
-  overflow-y: auto;    /* 縦スクロール */
-  border: 1px solid #ccc;
+
+.filter-row{ margin-top: 16px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.scope-toggle{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-mute);
+  cursor: pointer;
+  user-select: none;
+}
+.scope-toggle:hover{ color: var(--text); }
+.scope-toggle input{
+  width: 14px; height: 14px;
+  accent-color: var(--x);
+  cursor: pointer;
+}
+.filter-input{
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 320px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 10px 16px;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
 }
+.filter-input::placeholder{ color: var(--text-mute); }
+.filter-input:focus{ outline: none; border-color: #555; }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    text-align: left;
-}
-
-th.center {
-    text-align: center;
-}
-td.center {
-    text-align: center;
-}
-td.right {
-    text-align: right;
-}
-td.hidden {
-    font-size: 0;
-}
-
-th.rk {
-    text-align: center;
-    font-size: 14px;
-}
-th.wm {
-    text-align: center;
-    font-size: 11px;
-}
-
-th {
-    background: #f4f4f4;
-}
-
-tr:nth-child(even) {
-    background: #fafafa;
-}
-
-.checkbox-row {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.weapon-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    vertical-align: middle;
-    transform: scale(1.5);
-    transform-origin: center;
-}
-
-.weapon-icon_ {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    vertical-align: middle;
-    transform: scale(1.2);
-    transform-origin: center;
-}
-
-.weapon-iconmb {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    transform: scale(1.5);
-    transform-origin: center;
-}
-.weapon-iconmb_ {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    transform: scale(1.2);
-    transform-origin: center;
-}
-.rule-icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-
-.graphs {
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 20px auto 0;
-    max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-#chart-controls {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-/* 基本ボタン */
-#chart-controls button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 999px; /* 丸い */
-    background: #eee;
-    color: #333;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-/* ホバー */
-#chart-controls button:hover {
-    background: #ddd;
-    transform: translateY(-2px);
-}
-
-/* 押してる状態 */
-#chart-controls button.active {
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* 押した瞬間 */
-#chart-controls button:active {
-    transform: scale(0.95);
-}
-
-#chart-container {
-  display: flex;
-  justify-content: center; /* 横中央 */
-  align-items: center;     /* 縦中央 */
-}
-
-#chart-container2 {
-  display: flex;
-  justify-content: center; /* 横中央 */
-  align-items: center;     /* 縦中央 */
-}
-
-#chart-container3 {
-  display: flex;
-  justify-content: center; /* 横中央 */
-  align-items: center;     /* 縦中央 */
-}
-
-.selected {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  flex-wrap: wrap;
-  padding: 6px 12px;
-  background: #f5f7fa;
-  border: 1px solid #d0d7de;
-  border-radius: 12px;
-  font-size: 14px;
-  color: #555;
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 8px;
-  background: #e6f0ff;
-  border-radius: 999px;
-  color: #0078ff;
-  font-weight: bold;
-}
-
-.tag button {
-  border: none;
-  background: transparent;
-  color: #0078ff;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.choices {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-#tag-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-#grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 50px);
-  gap: 10px;
-
-  background-color: #eeeeee;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.icon {
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  background-color: rgb(213, 223, 234);
-  border-radius: 6px;
-
+/* ---------- ルールタブ（フィルタ） ---------- */
+.rule-tabs{ display: flex; gap: 8px; flex-wrap: wrap; }
+.rule-tab{
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  color: var(--text-mute);
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
   transition: all 0.15s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+
+  cursor: pointer;
+  background: none; 
 }
 
-.icon:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  background-color: rgb(200, 215, 230);
+.rule-tab[data-rule="eria"].active{ border-color: var(--eria); color: var(--eria); background: rgba(2,242,196,0.08); }
+.rule-tab[data-rule="yagura"].active{ border-color: var(--yagura); color: var(--yagura); background: rgba(122,38,248,0.08); }
+.rule-tab[data-rule="hoko"].active{ border-color: var(--hoko); color: var(--hoko); background: rgba(236,210,25,0.08); }
+.rule-tab[data-rule="asari"].active{ border-color: var(--asari); color: var(--asari); background: rgba(191,109,3,0.08); }
+.rule-tab:not(.active):hover{ color: var(--text); border-color: var(--line-hover); }
+
+.dim-tabs{ display: flex; gap: 8px; flex-wrap: wrap; }
+.dim-tab{
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  color: var(--text-mute);
+  transition: all 0.15s ease;
+
+  cursor: pointer;
+  background: none; 
+}
+.dim-tab.active{ border-color: var(--text); color: var(--text); background: rgba(254,254,254,0.08); }
+.dim-tab:not(.active):hover{ color: var(--text); border-color: var(--line-hover); }
+
+#usage-dim-tabs .dim-tab {
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+#usage-metric-tabs .dim-tab {
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, calc(100% - 8px) 100%, 8px 100%);
+}
+#usage-dim-tabs .dim-tab.active {
+  border-color: var(--x); color: var(--x); background: rgba(34,244,157,0.08);
 }
 
-.icon:active {
-  transform: translateY(1px);
-  box-shadow: 0 0.5px 1.5px rgba(0,0,0,0.2);
-  background-color: rgb(180, 200, 220);
+/*　スクロールバー */
+::-webkit-scrollbar{ width: 8px; }
+::-webkit-scrollbar-track{ background: transparent; }
+::-webkit-scrollbar-thumb{ background: var(--line); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover{ background: #3a3a42; }
+
+
+/* ---------- ランキング行 ---------- */
+
+.rank-list{
+  margin-top: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  max-height: 640px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-.tag-btn {
-padding: 6px 12px;
-border-radius: 20px;
-cursor: pointer;
-border: none;
-color: #333;
+.rank-list{ scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+
+.rank-row{ position: relative; }
+.rank-row + .rank-row{ border-top: 1px solid var(--line); }
+.rank-row.top{ background: rgba(255,210,63,0.06); }
+.rank-row.second{ background: rgba(197,199,204,0.06); }
+.rank-row.third{ background: rgba(200,117,61,0.06); }
+.rank-row .content{
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.rank-num{
+  font-family: var(--splat-font1);
+  font-size: 16px;
+  width: 36px;
+  color: var(--text-mute);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
 }
 
-.tag1 { background-color: #FADADC; }
-.tag2 { background-color: #DDF0DE; }
-.tag3 { background-color: #DCE6ED; }
-.tag4 { background-color: #FDEDE1; }
-.tag5 { background-color: #CFF1F8; }
-.tag6 { background-color: #D7EDEA; }
-.tag7 { background-color: #FFE3F1; }
-.tag8 { background-color: #FBF4E3; }
-.tag9 { background-color: #EAE4E2; }
-.tag10 { background-color: #EDDEF9; }
-.tag11 { background-color: #D4D9DF; }
-.tag12 { background-color: #F8DDD6; }
-.tag13 { background-color: #D7F2DA; }
-.tag14 { background-color: #D7E7F2; }
-.tag15 { background-color: #D7F2F1; }
-.tag16 { background-color: #D7D8F2; }
+.rank-row.top .rank-num{ color: var(--gold); }
+.rank-row.second .rank-num{ color: var(--silver); }
+.rank-row.third .rank-num{ color: var(--copper); }
 
-.tag-btn:hover {
-  filter: brightness(0.95);
+.weapon-icon{
+  width: 31px; height: 31px;
+  border-radius: 6px;
+  background: var(--header-bg);
+  flex-shrink: 0;
+  object-fit: contain;
+  padding: 1px;
+  transform: scale(1.3);
 }
 
-.tag-btn:active {
-  filter: brightness(1.05);
+.row-name{ font-family: var(--splat-font2); font-size: 16px; line-height: 1.4; }
+.row-weapon{ font-size: 10px; color: var(--text-mute); line-height: 1.4; }
+.row-main{
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.row-weapon{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.row-power{
+  font-size: 16px;
+  font-family: var(--splat-font2)
 }
 
-
-#weapon-controls {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
+/* ---------- 使用率ヒートマップテーブル ---------- */
+.usage-table-wrap{
+  margin-top: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  max-height: 640px;
+  overflow: auto;
+}
+.usage-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-family: var(--splat-font2);
 }
 
-/* 基本ボタン */
-#weapon-controls button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 999px; /* 丸い */
-    background: #eee;
-    color: #333;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
+.usage-table th, .usage-table td{
+  padding: 7px 15px;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  vertical-align: middle;
+}
+.usage-table th:first-child, .usage-table td:first-child{ text-align: center; width: 44px; }
+.usage-table th:nth-child(2), .usage-table td:nth-child(2){ text-align: left; }
+.usage-table th:nth-child(n+3), .usage-table td:nth-child(n+3){ min-width: 76px; text-align: right; }
+
+/* 歴代推移テーブルは「シーズン,エリア,ヤグラ,ホコ,アサリ,全体,増減」で列構成が違うので、
+   1列目=シーズン(ラベル)、2列目以降=数値、として上のルールを上書きする */
+.history-weapon-table th:first-child, .history-weapon-table td:first-child{
+  text-align: left;
+  width: auto;
+}
+.history-weapon-table th:nth-child(n+2), .history-weapon-table td:nth-child(n+2){
+  min-width: 76px;
+  text-align: right;
 }
 
-/* ホバー */
-#weapon-controls button:hover {
-    background: #ddd;
-    transform: translateY(-2px);
+.usage-table thead th{
+  position: sticky;
+  top: 0;
+  background: var(--panel-alt);
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: sans-serif;
+  color: var(--text-mute);
+  z-index: 1;
+}
+.usage-table tbody tr:not(:first-child) td{ border-top: 1px solid var(--line); }
+.usage-table td.rank{ font-family: var(--splat-font1); color: var(--text-mute); font-size: 12px; }
+.usage-table .label-text{ margin-left:5px; font-family: var(--splat-font2); }
+.usage-icon{
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  background: var(--header-bg);
+  object-fit: contain;
+  padding: 1px;
+  flex-shrink: 0;
+  transform: scale(1.4) translateY(-5%);
+  vertical-align: middle;
+}
+.usage-table td.metric{ font-family: var(--font-display); font-size: 13px; }
+.usage-table td.overall{ font-weight: 800; }
+.usage-table td.diff-flat{ color: var(--text-mute); }
+.usage-table th.sortable{ cursor: pointer; user-select: none; }
+.usage-table th.sortable:hover{ color: var(--text); }
+.usage-table th.sortable.active{ color: var(--text); }
+.usage-table .sort-arrow{ font-size: 9px; margin-left: 3px; }
+
+.usage-table-wrap{ scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+
+.usage-table .label-count{ color: var(--text-mute); font-size: 11px; }
+
+
+.empty-note{
+  padding: 20px;
+  border: 1px dashed var(--line);
+  color: var(--text-mute);
+  font-size: 13px;
 }
 
-/* 押してる状態 */
-#weapon-controls button.active {
-    background: linear-gradient(135deg, #ff8000, #ff0000);
-    color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+/* ---------- 歴代ページ ---------- */
+.history-section{ margin-bottom: 56px; }
+.history-section:last-child{ margin-bottom: 0; }
+.history-season-tag{
+  font-size: 11px;
+  color: var(--text-mute);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.history-weapon-heading{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-family: var(--splat-font2);
+  font-size: 15px;
+}
+.history-weapon-heading .usage-icon{ width: 28px; height: 28px; }
+.history-weapon-heading:empty{ display: none; }
+
+#history-dim-tabs .dim-tab {
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+#history-metric-tabs .dim-tab {
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, calc(100% - 8px) 100%, 8px 100%);
+}
+#history-dim-tabs .dim-tab.active {
+  border-color: var(--x); color: var(--x); background: rgba(34,244,157,0.08);
 }
 
-/* 押した瞬間 */
-#weapon-controls button:active {
-    transform: scale(0.95);
+@media (max-width: 640px){
+  main{ padding: 28px 16px 80px; }
+  .rank-row .content{ padding: 10px 16px; gap: 12px; }
+  .rank-list{ max-height: 70vh; }
+  .row-weapon{ display: none; }
+  .usage-table th, .usage-table td{ padding: 8px 10px; font-size: 12px; }
+  .usage-table .label-text{ display: none; }
+  .usage-table td.label{ justify-content: center; }
+  .usage-table th:nth-child(n+3), .usage-table td:nth-child(n+3){ min-width: 50px; text-align: right; }
+  .history-weapon-table th:nth-child(n+2), .history-weapon-table td:nth-child(n+2){ min-width: 50px; text-align: right; }
 }
