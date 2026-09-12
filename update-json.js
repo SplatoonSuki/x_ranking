@@ -1,15 +1,14 @@
 (async () => {
   const fs = require("fs");
-  const eriadata = JSON.parse(fs.readFileSync("data/eria.json", "utf-8"));
-  const yaguradata = JSON.parse(fs.readFileSync("data/yagura.json", "utf-8"));
-  const hokodata = JSON.parse(fs.readFileSync("data/hoko.json", "utf-8"));
-  const asaridata = JSON.parse(fs.readFileSync("data/asari.json", "utf-8"));
+
+  const currentSeason = 17;
+
   const [eria_new, yagura_new, hoko_new, asari_new
   ] = await Promise.all([
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-17.splatzones.json').then(res => res.json()),
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-17.towercontrol.json').then(res => res.json()),
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-17.rainmaker.json').then(res => res.json()),
-    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-17.clamblitz.json').then(res => res.json())
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + str(currentSeason) + '.splatzones.json').then(res => res.json()),
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + str(currentSeason) + '.towercontrol.json').then(res => res.json()),
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + str(currentSeason) + '.rainmaker.json').then(res => res.json()),
+    fetch('https://splatoon3.ink/data/xrank/xrank.detail.p-' + str(currentSeason) + '.clamblitz.json').then(res => res.json())
   ]);
   const weaponNameMap = {
     "Splattershot": "スプラシューター",
@@ -191,24 +190,21 @@
     return {
       weapon: weaponNameMap[edge.node.weapon.name] || edge.node.weapon.name,
       name: edge.node.name,
-      power: edge.node.xPower,
-      season: 17
+      power: edge.node.xPower
     };
   });
   const hoko = hoko_new.data.node.xRankingGl.edges.map(edge => {
     return {
       weapon: weaponNameMap[edge.node.weapon.name] || edge.node.weapon.name,
       name: edge.node.name,
-      power: edge.node.xPower,
-      season: 17
+      power: edge.node.xPower
     };
   });
   const yagura = yagura_new.data.node.xRankingLf.edges.map(edge => {
     return {
       weapon: weaponNameMap[edge.node.weapon.name] || edge.node.weapon.name,
       name: edge.node.name,
-      power: edge.node.xPower,
-      season: 17
+      power: edge.node.xPower
     };
   });
 
@@ -216,32 +212,13 @@
     return {
       weapon: weaponNameMap[edge.node.weapon.name] || edge.node.weapon.name,
       name: edge.node.name,
-      power: edge.node.xPower,
-      season: 17
+      power: edge.node.xPower
     };
   });
 
-  // 下500件を置き換え
-  const updated_e = [
-    ...eriadata.slice(0,-500),
-    ...eria
-  ];
-  const updated_y = [
-    ...yaguradata.slice(0,-500),
-    ...yagura
-  ];
-  const updated_h = [
-    ...hokodata.slice(0,-500),
-    ...hoko
-  ];
-  const updated_a = [
-    ...asaridata.slice(0,-500),
-    ...asari
-  ];
-
   // 書き込み（整形つき）
-  fs.writeFileSync("data/eria.json", JSON.stringify(updated_e, null, 2), "utf-8");
-  fs.writeFileSync("data/yagura.json", JSON.stringify(updated_y, null, 2), "utf-8");
-  fs.writeFileSync("data/hoko.json", JSON.stringify(updated_h, null, 2), "utf-8");
-  fs.writeFileSync("data/asari.json", JSON.stringify(updated_a, null, 2), "utf-8");
+  fs.writeFileSync("data/" +  str(currentSeason) + "/eria.json", JSON.stringify(eria, null, 2), "utf-8");
+  fs.writeFileSync("data/" +  str(currentSeason) + "/yagura.json", JSON.stringify(yagura, null, 2), "utf-8");
+  fs.writeFileSync("data/" +  str(currentSeason) + "/hoko.json", JSON.stringify(hoko, null, 2), "utf-8");
+  fs.writeFileSync("data/" +  str(currentSeason) + "/asari.json", JSON.stringify(asari, null, 2), "utf-8");
 })();
