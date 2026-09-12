@@ -1,4 +1,4 @@
-import { normalizeUrl, normalizeAlias, scopeToCharger } from '/utils.js';
+import { normalizeUrl, normalizeAlias, scopeToCharger } from './utils.js';
 
 const currentSeason = 17
 
